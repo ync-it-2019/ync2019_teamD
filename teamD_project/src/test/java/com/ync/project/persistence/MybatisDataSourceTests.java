@@ -23,35 +23,35 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class MybatisDataSourceTests {
 
-	@Autowired
-	private DataSource dataSource;
+   @Autowired
+   private DataSource dataSource;
 
-	@Autowired
-	private SqlSessionFactory sqlSessionFactory;
+   @Autowired
+   private SqlSessionFactory sqlSessionFactory;
 
-	@Test
-	public void testMyBatis() {
+   @Test
+   public void testMyBatis() {
 
-		try (SqlSession session = sqlSessionFactory.openSession(); Connection con = session.getConnection();) {
+      try (SqlSession session = sqlSessionFactory.openSession(); Connection con = session.getConnection();) {
 
-			log.info(session);
-			log.info(con);
+         log.info(session);
+         log.info(con);
 
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
+      } catch (Exception e) {
+         fail(e.getMessage());
+      }
 
-	}
+   }
 
-	@Test
-	public void testConnection() {
+   @Test
+   public void testConnection() {
 
-		try (Connection con = dataSource.getConnection()) {
+      try (Connection con = dataSource.getConnection()) {
 
-			log.info(con);
+         log.info(con);
 
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
-	}
+      } catch (Exception e) {
+         fail(e.getMessage());
+      }
+   }
 }

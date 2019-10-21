@@ -19,18 +19,18 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class DataSourceTests {
 
-	@Autowired
-	private DataSource dataSource;
+   @Autowired
+   private DataSource dataSource;
 
-	@Test
-	public void testConnection() {
+   @Test
+   public void testConnection() {
 
-		try (Connection con = dataSource.getConnection()) {
+      try (Connection con = dataSource.getConnection()) {
 
-			log.info(con);
+         log.info(con);
 
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
-	}
+      } catch (Exception e) {
+         fail(e.getMessage());
+      }
+   }
 }
