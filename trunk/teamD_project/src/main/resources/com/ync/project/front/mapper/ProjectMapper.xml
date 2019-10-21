@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ync.project.front.mapper.ProjectMapper"> <!-- 인터페이스와 이름동일 -->
+
+	
+	<insert id="insert">
+		INSERT INTO 테이블명(projcet_num,
+						  email,
+						  category,
+						  title_image,
+						  simple_content, 
+						  phone, 
+						  project_start, 
+						  project_end,
+						  current_invest,
+						  achive_invest,
+						  attach_1,
+						  attach_2,
+						  attach_3,
+						  company)
+		VALUES (seq_board.nextval,
+		        #{email}, 
+		        #{category}, 
+		        #{title_image},
+		        #{simple_content}, 
+		        #{phone}, 
+		        #{project_start},
+		        #{project_end},
+		        #{current_invest},
+		        #{achive_invest},
+		        #{attach_1},
+		        #{attach_2},
+		        #{attach_3},
+		        #{company})
+	</insert><!-- 마이바티스트에서 getter를 불러서 넣어줌 -->
+	<!-- #은 mybatist문법  Preparestmt(?) 에서 ?에  setTitle()이렇게 하나하나 값넣었던거랑 같음 -->
+	
+
+	
+	
+</mapper>
