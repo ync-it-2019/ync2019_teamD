@@ -14,6 +14,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:annotation-config></context:annotation-config>
 	
+	<context:property-placeholder location="classpath:/global.properties"/>
 	<!-- HikariCP DBconnection setting-->
 	<!--
 	Oracle Cloud DB 사용을 위한 DB접속 설정으로 변경 됨
@@ -24,10 +25,12 @@
 	-->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@220.67.2.3:1521:ora11"></property>
-		<property name="username" value="educ239"></property>
-		<property name="password" value="pass239"></property>
+		<property name="jdbcUrl" value="${globalConfig.jdbcUrl}"></property>
+		<property name="username" value="${globalConfig.OracleUsername}"></property>
+		<property name="password" value="${globalConfig.OraclePassword}"></property>
+		<property name="maximumPoolSize" value="5"></property>
 	</bean>
+	
 
 	<!-- HikariCP configuration -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">

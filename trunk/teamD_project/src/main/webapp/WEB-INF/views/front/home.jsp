@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="nav navbar-nav menu__list">
 								<li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
 								<li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-								<li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
+								<li class=" menu__item"><a class="menu__link" href="/front/project">프로젝트</a></li>
 								<li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
 								<li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
 								<li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
@@ -126,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="hidden" name="cmd" value="_cart">
 						<input type="hidden" name="display" value="1">
 						<!-- style.css w3view-cart 색상 변경 및 projectSubmitButton 클래스 생성 -->
-						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write.html'">
+						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = '/front/project_write'">
 							<h5 class="projectSubmitButton">Project 신청</h5>
 						</button>
 					</form>

@@ -31,30 +31,6 @@ public class HeaderController {
       return "front/join";
    }
    
-   @GetMapping(value = "/joinsuccess")
-   public String joinsuccess() {
-
-      log.info("joinsuccess!");
-   
-      return "front/joinsuccess";
-   }
-   
-   @GetMapping(value = "/investorjoin")
-   public String investorjoin() {
-
-      log.info("Welcome investorjoin!");
-   
-      return "front/investorjoin";
-   }
-   
-   @GetMapping(value = "/investorsuccess")
-   public String investorsuccess() {
-
-      log.info("investorsuccess!");
-   
-      return "front/investorsuccess";
-   }
-   
    
    @GetMapping(value = "/myPage")
    public String mypage() {

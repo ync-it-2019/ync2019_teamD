@@ -202,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- /banner_bottom_agile_info -->
    <div class="page-head_agile_info_w3l">
       <div class="container">
-         <h3>FQA</h3>
+         <h3>FAQ</h3>
          <!--/w3_short-->
          <div class="services-breadcrumb">
             <div class="agile_inner_breadcrumb">
@@ -237,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-4 contact-grid-agile-w3">
                <div class="contact-grid-agile-w33">
                   <a href="fqa">
-                     <h4>FQA</h4>
+                     <h4>FAQ</h4>
                   </a>
                </div>
             </div>
@@ -245,9 +245,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          </div>
       </div>
    </div>
-   <div class="searchbox">
-         <input type="text" placeholder="자주하는 질문 검색" size="30px">
-      <input type="submit" name="ok" value="Search">
+   <div class="container">
+   		<div class="searchbox">
+      		<input type="text" placeholder="자주하는 질문 검색" size="30px">
+      		<input type="submit" name="ok" value="Search" class="ClassName">
+   		</div>
    </div>
    <div class="banner_bottom_agile_info">
       <div class="container">

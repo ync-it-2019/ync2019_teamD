@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ync.project.front.mapper.NoticeMapper"> <!-- 인터페이스와 이름동일 -->
+	<!-- getListWithPaging에서 where에 include해서 이 코드 불러오기도 가능 -->
+	<sql id = "criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item= 'type' collection = "typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%' ||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%' ||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like '%' ||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql> 
+
+
+	<!-- 크다작다 할때에는 CDATA를 꼭 넣어야함  >이런표시가 닫는걸로 인식해버림 7번라인 -->
+	<select id="getList" resultType="com.ync.project.domain.NoticeVO"><!--id이름 중복x, resultType이름 메소드 이름과 동일 -->
+	<!-- id값을 보고 이름같기 때문에 이 코드 호출가능 mybtis가 알아서 불러줌 -->
+	<![CDATA[
+		SELECT * 
+		FROM teamd_notice 
+		WHERE notice_num > 0 
+		]]>
+	</select>
+
+	<select id="getListWithPaging" resultType="com.ync.project.domain.NoticeVO">
+		<![CDATA[
+		SELECT notice_num,
+			   title,
+			   content,
+			   userid,
+			   reg_date,
+			   attach
+	    FROM (
+	    	  SELECT /*+INDEX_DESC(teamd_notice xpkteamd_notice) */
+	    	  	rownum rn,
+	    	  	notice_num,
+	    	  	title,
+	    	  	content,
+	    	  	userid,
+	    	  	reg_date,
+	    	  	attach
+	    	  FROM teamd_notice
+	    	  WHERE
+		]]>
+		<include refid = "criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount}
+			)
+		WHERE rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	 
+	
+
+	<insert id="insert">
+		INSERT INTO teamd_notice(
+								 notice_num,
+								 userid,
+								 title,								 
+								 content,
+								 attach,
+								 reg_date															 
+								)
+		VALUES (
+				 teamd_seq_notice.nextval,
+				 #{userid},
+				 #{title},
+				 #{content},
+				 #{attach},
+				 sysdate				 				 				 
+				 )
+				 
+	</insert><!-- 마이바티스트에서 getter를 불러서 넣어줌 -->
+	<!-- #은 mybatist문법  Preparestmt(?) 에서 ?에  setTitle()이렇게 하나하나 값넣었던거랑 같음 -->
+	
+	<insert id="insertSelectKey"><!-- 몇번째 게시물입니다 이런거 띄울려고 하는거. 필요없음 -->
+
+		<selectKey keyProperty="notice_num" order="BEFORE"
+			resultType="long">
+			SELECT teamd_seq_notice.nextval FROM dual <!-- 현재 시퀀스 번호 가져옴. 데이터베이스에서 등록되어 있는듯 -->
+		</selectKey>
+	<!-- 컨트롤 쉬프트 x = 대문자로 변환, 컨트롤 쉬프트 y 소문자 변환 -->
+	<![CDATA[
+		INSERT INTO teamd_notice(
+								 notice_num,
+								 userid,
+								 title,								 
+								 content,
+								 attach,
+								 reg_date
+								)
+		VALUES (
+				 teamd_seq_notice.nextval,
+				 #{userid},
+				 #{title},
+				 #{content},
+				 #{attach},
+				 sysdate
+				 )
+				 ]]>
+	</insert>
+	
+	
+	<!-- select -->
+	<select id="read" resultType = "com.ync.project.domain.NoticeVO">
+		SELECT * FROM teamd_notice where notice_num = #{notice_num}
+	</select>
+	
+	<!-- delete -->
+	<delete id="delete">
+		delete from teamd_notice where notice_num = #{notice_num}
+	</delete>
+	
+	<!-- update -->
+	<update id="update">
+		UPDATE teamd_notice SET title = #{title},
+							  content = #{content},
+							  userid = #{userid}
+							  WHERE notice_num = #{notice_num}
+	</update>
+	
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT count(*) 
+		FROM teamd_notice 
+		WHERE notice_num > 0
+	</select>
+	
+	
+	
+	
+</mapper>

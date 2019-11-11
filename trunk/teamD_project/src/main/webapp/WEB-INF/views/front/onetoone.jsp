@@ -237,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 contact-grid-agile-w3">
 					<div class="contact-grid-agile-w33">
 						<a href="fqa">
-							<h4>FQA</h4>
+							<h4>FAQ</h4>
 						</a>
 					</div>
 				</div>
@@ -245,18 +245,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<div class="searchbox">
-		<table frame=void>
-			<tr>
-				<td colspan="2">
-					<input type="text" placeholder="작성자" size="20px" class="pull-left">
-					<input type="submit" name="ok" value="Search" class="pull-left">
-				</td>
-				<td>
-					<input type="submit" name="ok" value="문의하기" onclick="location.href='otoform'" class="pull-right">
-				</td>
-			</tr>
-		</table>
+	<div class="container">
+		<div class="searchbox">
+			<input type="text" placeholder="작성자" size="20px">
+			<input type="submit" name="ok" value="Search" class="ClassName">
+			<span style="float:right">
+				<input type="submit" name="ok" value="문의하기" onclick="location.href='otoform'" class="ClassName">
+			</span>
+		</div>
 	</div>
 	<div class="banner_bottom_agile_info">
 		<div class="container">

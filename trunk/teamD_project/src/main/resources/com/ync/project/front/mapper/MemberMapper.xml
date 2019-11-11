@@ -6,9 +6,18 @@
 		<id property="userid" column="userid"/>
 		<result property="userid" column="userid"/>
 		<result property="userpw" column="userpw"/>
-		<result property="userName" column="username"/>
+		<result property="phone" column="phone"/>
 		<result property="regDate" column="regdate"/>
-		<result property="updateDate" column="updatedate"/>
+		<result property="address" column="address"/>
+		<result property="job" column="job"/>
+		<result property="account" column="account"/>
+		<result property="profile_image" column="profile_image"/>
+		<result property="interesting_category" column="interesting_category"/>
+		<result property="self_introduce" column="self_introduce"/>
+		<result property="name" column="name"/>
+		<result property="bank" column="bank"/>
+		<result property="nickname" column="nickname"/>
+		<result property="auth" column="auth"/>
 		<collection property="authList" resultMap="authMap">
 		</collection> 
 	</resultMap>
@@ -24,16 +33,54 @@
 	Spring Security의 기본 사용법과 다르게 tbl_member에 권한 컴럼(auth)을
 	넣어서 사용하기에 기본 사용법과 달라진다.
 	-->
+	
 	<select id="read" resultMap="memberMap">
 	SELECT	userid,
 			userpw,
-			username,
-			enabled,
-			regdate,
-			updatedate,
+			name,
+			nickname,
+			phone,
+			address,
+			job,
+			bank,
+			account,
+			profile_image,
+			interesting_category,
+			self_introduce,
 			auth
-	FROM	tbl_member
+	FROM	teamd_member
 	WHERE	userid = #{userid} 
 	</select>
+
+	<!-- 회원가입 -->
+	<insert id="insert">
+		INSERT	INTO	teamd_member(   userid,
+										userpw,
+										phone,
+										address,
+										job,
+										name,
+										nickname,
+										auth
+									)
+		VALUES			(   #{userid},
+							#{userpw},
+							#{phone},
+							#{address},
+							#{job},
+							#{name},
+							#{nickname},
+							#{auth}
+						)
+	</insert>
+	
+	<!-- 프로필 업데이트 -->
+	<update id="update">
+		UPDATE 	teamd_member
+		SET		profile_image = #{profile_image},
+				interesting_category = #{interesting_category},
+				self_introduce = #{self_introduce}
+		WHERE	userid = #{userid}
+	</update>
 
 </mapper>

@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> 로그인 </a></li>
         <li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
         <li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-        <li> <a href="contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
+        <li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
       </ul>
     </div>
   </div>
@@ -297,10 +297,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   새로운 시대를 만듭시다<br>
                   라이프스타일 아이디어 공유 Gorenani
                 </font>
+                <a href="../">
+            <input type="button" id="bnt" value="확인">
+          </a>
               </div>
-              <a href="../">
-                <input type="submit" value="확인">
-              </a>
             </form>
             <div class="styled-input">
               <p>

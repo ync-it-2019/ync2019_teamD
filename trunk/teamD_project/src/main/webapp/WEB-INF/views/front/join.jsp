@@ -197,35 +197,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3 class="agileinfo_sign">로그인<span></span></h3>
             <form action="#" method="post">
               <div class="styled-input agile-styled-input-top">
-                <input type="text" name="Email" required="">
+                <input type="text" name="userid" required="">
                 <label>이메일 계정</label>
                 <span></span>
               </div>
               <div class="styled-input">
-                <input type="password" name="Password" required="">
+                <input type="password" name="userpw" required="">
                 <label>비밀번호</label>
                 <span></span>
-                <input type="checkbox" name="Remember" value="">
+                <input type="checkbox" name="remember" value="">
                 <font size="2em" color="black">아이디 저장</font>
               </div>
               <a href="#">
                 <input type="submit" value="로그인">
               </a>
             </form>
-            <!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter">
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul> -->
             <div class="styled-input">
               <p>
                 <font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
@@ -298,31 +284,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <br>
         <form action="joinsuccess" method="post">
           <div class="styled-input ">
-            <input type="text" name="Name" id="Name" required="" autofocus>
+            <input type="text" name="name" id="name" required="" autofocus>
             <label>이름</label>
             <span></span>
           </div>
-          <!-- <div class="row">
-                <div class="col-lg-6 in-gp-tb">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="닉네임">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">중복확인</button>
-                    </span>
-                  </div>
-                </div>
-              </div> -->
-          <!-- /input-group -->
           <div class="styled-input agile-styled-input-top">
             <span class="input-group-btn">
-              <input type="text" name="NickName" required="">
+              <input type="text" name="nickname" id="nickname" required="">
               <label>닉네임</label>
               <button class="btn btn-default" id="cnbnt" onclick="cnbnt_click();" type="button">중복확인</button>
             </span>
           </div>
           <div class="styled-input agile-styled-input-top">
             <span class="input-group-btn">
-              <input type="text" name="Email" required="">
+              <input type="text" name="userid" id="userid" required="">
               <label>아메일 계정</label>
               <button class="btn btn-default" id="cebnt" onclick="cebnt_click();" type="button">중복확인</button>
             </span>
@@ -333,32 +308,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <button class="btn btn-default" type="button">중복확인</button>
               </div> -->
           <div class="styled-input">
-            <input type="password" name="Password" required="">
+            <input type="password" name="userpw" id="userpw" required="">
             <label>비밀번호 입력</label>
             <font size="2em" color="gray">영문, 숫자, 특수문자를 조합한 8자 이상</font>
           </div>
-          <div class="styled-input">
-            <input type="password" name="ConfirmPassword" required="">
+<!--           <div class="styled-input">
+            <input type="password" name="userpw2" id="userpw2" required="">
             <label>비밀번호 확인</label>
             <span></span>
-          </div>
+          </div> -->
           <br>
           <br>
           <font size="5em" color="white">기타 정보 입력</font>
           <div class="styled-input">
-            <input type="text" name="Address" required="">
+            <input type="text" name="address" id="address" required="">
             <label>거주지 주소</label>
             <span></span>
           </div>
-          <div class="styled-input">
-            <input type="text" name="DetailsAddress" required="">
+          <!-- <div class="styled-input">
+            <input type="text" name="address2" id="address2" required="">
             <label>상세 주소</label>
             <span></span>
-          </div>
-          <div class="styled-input">
+          </div> -->
+<!--            <div class="styled-input">
             <td>
               <font size="3em" color="white">직종 선택 </font>
-              <select name="Job">
+              <select name="job" id="job">
                 <option value="Student">학생</option>
                 <option value="Office">사무직</option>
                 <option value="Service">서비스직</option>
@@ -370,9 +345,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <option value="Unemployed">무직</option>
               </select>
             </td>
-          </div>
+          </div> -->
           <div class="styled-input">
-            <input type="text" name="Phone" required="">
+            <input type="text" name="phone" id="phone" required="">
             <label>휴대폰 번호</label>
             <span></span>
           </div>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ync.project.front.mapper.InvestorMapper">
+
+	<resultMap type="com.ync.project.domain.InvestorVO" id="InvestorMap">
+		
+		<id property="investor_num" column="investor_num"/>
+		<result property="investor_num" column="investor_num"/>
+		<result property="project_num" column="project_num"/>
+		<result property="amount" column="amount"/>
+		<result property="score" column="score"/>
+		<result property="job" column="job"/>
+		<result property="userid" column="userid"/>
+		
+	<collection property="authList" resultMap="authMap"></collection> 
+	
+	</resultMap>
+	
+	<resultMap type="com.ync.project.domain.AuthVO" id="authMap">
+		<result property="userid" column="userid"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+
+
+	<select id="read" resultMap="InvestorMap">
+	SELECT	investor_num,
+			project_num,
+			amount,
+			score,
+			job,
+			userid 
+	FROM	teamd_investor
+	WHERE	userid = #{userid} 
+	</select>
+	
+	<insert id="insert">
+		INSERT	INTO	teamd_investor(
+							investor_num,
+							project_num,
+							amount,
+							score,
+							job,
+							userid 
+						)
+		VALUES(
+				#{investor_num),
+				#{project_num),
+				#{amount),
+				#{score),
+				#{job),
+				#{userid)
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE	teamd_investor
+		SET		investor_num = #{investor_num},
+				project_num = #{project_num},
+				amount = #{amount},
+				score = #{score},
+				job = #{job},
+				userid = #{userid}
+		WHERE	userid = #{userid}
+	</update>
+</mapper>
