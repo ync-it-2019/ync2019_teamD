@@ -12,7 +12,7 @@ public interface MemberMapper {
 
 	public MemberVO read(String userid);
 	
-	public void insert(MemberVO member);
+	public int insert(MemberVO member);
 	
 	public int update(MemberVO member);
 

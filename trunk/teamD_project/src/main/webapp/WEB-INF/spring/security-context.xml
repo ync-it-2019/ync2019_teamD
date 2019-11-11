@@ -14,7 +14,6 @@
 			
 		<security:intercept-url	pattern="/front/all" access="permitAll" /> <!--role_member라는 권한을 가지고 있으면. 672페이지 참고  -->
 		
-		
 		<security:form-login login-page="/customLogin" />
 		
 		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
