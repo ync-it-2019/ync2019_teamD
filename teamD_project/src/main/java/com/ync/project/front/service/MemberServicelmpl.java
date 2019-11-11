@@ -1,5 +1,7 @@
 package com.ync.project.front.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +46,10 @@ public class MemberServicelmpl implements MemberService{
 		return mapper.update(member) == 1;
 	}
 
+	@Override
+	public int register(MemberVO member) {
+		log.info("register......." + member);
+		return mapper.insert(member);
+	}
+	
 }
