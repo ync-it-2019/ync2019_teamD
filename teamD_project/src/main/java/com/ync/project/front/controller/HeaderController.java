@@ -47,6 +47,5 @@ public class HeaderController {
    
       return "front/notice";
    }
-   
 
 }

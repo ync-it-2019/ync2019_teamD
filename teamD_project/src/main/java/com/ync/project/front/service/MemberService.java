@@ -20,6 +20,18 @@ public interface MemberService {
 	
 	//프로필 수정
 	public boolean update(MemberVO member);
+	
+	/**
+	 * 
+	  * @Method 설명 : 회원가입 서비스
+	  * @Method Name : insert
+	  * @Date : 2019. 11. 5.
+	  * @작성자 : 이승철
+	  * @param member
+	  * @return
+	 */
+//	회원가입
+	public void insert(MemberVO member);
 
 
 }

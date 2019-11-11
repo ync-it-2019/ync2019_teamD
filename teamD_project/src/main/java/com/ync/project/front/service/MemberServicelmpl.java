@@ -31,6 +31,12 @@ public class MemberServicelmpl implements MemberService{
 		
 		return mapper.read(userid);
 	}
+	
+	public void insert(MemberVO member) {
+		log.info("insert......." + member);
+		
+		mapper.insert(member);
+	};
 
 	@Override
 	public boolean update(MemberVO member) {

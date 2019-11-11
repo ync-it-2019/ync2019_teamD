@@ -6,28 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ync.project.domain.Criteria;
+import com.ync.project.domain.ProjectVO;
+import com.ync.project.domain.RippleRippleVO;
 import com.ync.project.domain.RippleVO;
 import com.ync.project.front.mapper.RippleMapper;
+import com.ync.project.front.mapper.Ripple_rippleMapper;
 
 import lombok.extern.log4j.Log4j;
 
 /**
  * 
-  * @FileName	: RippleMapper.java
-  * @Date		: 2019. 10. 23. 
-  * @Author		: 이준혁
-  * @프로그램 설명 : 댓글service 작성
+  * @FileName	: Ripple_rippleServiceImpl.java
+  * @Date		: 2019. 10. 30. 
+  * @Author		: 이승철
+  * @프로그램 설명 : 대댓글 서비스Impl
  */
 
 @Log4j
 @Service
-public class RippleServiceImpl implements RippleService {
+public class Ripple_rippleServiceImpl implements Ripple_rippleService {
 
 	@Autowired
-	private RippleMapper mapper;
+	private Ripple_rippleMapper mapper;
 
 	@Override
-	public int register(RippleVO ripple) {
+	public int register(RippleRippleVO ripple) {
 		
 		log.info("register......." + ripple);
 
@@ -35,7 +38,7 @@ public class RippleServiceImpl implements RippleService {
 	}
 
 	@Override
-	public RippleVO get(Long ripple_num) {
+	public RippleRippleVO get(Long ripple_num) {
 
 		log.info("get......." + ripple_num);
 
@@ -43,7 +46,7 @@ public class RippleServiceImpl implements RippleService {
 	}
 
 	@Override
-	public List<RippleVO> getList() {
+	public List<RippleRippleVO> getList() {
 
 		log.info("getList.......");
 
@@ -51,23 +54,15 @@ public class RippleServiceImpl implements RippleService {
 	}
 
 	@Override
-	public boolean modify(RippleVO content) {
+	public int modify(RippleRippleVO content) {
 		log.info("modify......." + content);
-		return mapper.update(content) == 1;
+		return mapper.update(content);
 	}
 	
 	@Override
-	public boolean remove(Long ripple_num) {
+	public int remove(Long ripple_num) {
 		log.info("remove......." + ripple_num);
-		return mapper.delete(ripple_num) == 1;
-	}
-
-	@Override
-	public List<RippleVO> getListWithPaging(Criteria cri, Long bno) {
-		
-		log.info("get Ripple List of a Board " + bno);
-		return mapper.getListWithPaging(cri, bno);
-		
+		return mapper.delete(ripple_num);
 	}
 
 }
