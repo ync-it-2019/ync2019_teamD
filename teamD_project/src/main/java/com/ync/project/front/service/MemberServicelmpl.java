@@ -40,10 +40,4 @@ public class MemberServicelmpl implements MemberService{
 		return mapper.update(member) == 1;
 	}
 
-	@Override
-	public int register(MemberVO member) {
-		log.info("register......." + member);
-		return mapper.insert(member);
-	}
-	
 }
