@@ -472,7 +472,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>이미영</li> <br>
 							<li>이지원</li> <br>
 							<li>이준혁</li> <br>
-							<li>이승철</li>
+							<li>이승철</li> <br>
+							<div style="color:black">석준영</div>
 						</ul>
 
 					</div>

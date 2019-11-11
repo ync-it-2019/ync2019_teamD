@@ -8,17 +8,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnailator;
 
-@Controller
 @Log4j
 public class UploadUtils {
-
+	
 	private static String getFolder() {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -27,7 +24,8 @@ public class UploadUtils {
 
 		String str = sdf.format(date);
 
-		return str.replace("-", File.separator);
+		//return str.replace("-", File.separator);
+		return str.replace("-", "/");
 	}
 
 	private static boolean checkImageType(File file) {
@@ -45,7 +43,7 @@ public class UploadUtils {
 		return false;
 	}
 
-	@PostMapping("/uploadFormAction")
+	
 	public static String uploadFormPost(MultipartFile uploadFile, String realUploadPath) {
 
 		String uploadFolder = realUploadPath;
@@ -94,7 +92,8 @@ public class UploadUtils {
 					thumbnail.close();
 				}
 
-				fullSaveName = getFolder() + File.separator + saveFileName;
+				//fullSaveName = getFolder() + File.separator + saveFileName;
+				fullSaveName = getFolder() + "/" + saveFileName;
 
 			} catch (Exception e) {
 				e.printStackTrace();
