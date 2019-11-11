@@ -18,7 +18,7 @@ public class Criteria {
 	private String type;
 	
 	public Criteria() {
-		this(1,10);
+		this(1,9);
 	}
 	
 	public Criteria(int pageNum, int amount ) {

@@ -18,13 +18,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//tags -->
-<link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css">
-<link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="resources/css/font-awesome.css" rel="stylesheet">
+<link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="/resources/css/jquery-ui.css">
+<link href="/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/resources/css/font-awesome.css" rel="stylesheet">
 <!-- //for bootstrap working -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 </head>
 <body>
 <!-- header -->
@@ -175,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-4 modal_body_right modal_body_right1">
-					<img src="resources/images/log_pic.jpg" alt=" " />
+					<img src="/resources/images/log_pic.jpg" alt=" " />
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -207,7 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="banner-bootom-w3-agileits">
 	<div class="container">
          <!-- mens -->
-		<div class="col-md-4 products-left">
+		<div class="col-md-3 products-left" style="margin:0 50px 0 0;">
 			<div class="filter-price">
 
 			</div>
@@ -247,13 +251,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div  id="top" class="callbacks_container">
 					<ul class="rslides" id="slider3">
 						<li>
-							<img class="img-responsive" src="resources/images/banner2.jpg" alt=" "/>
+							<img class="img-responsive" src="/resources/images/banner2.jpg" alt=" "/>
 						</li>
 						<li>
-							<img class="img-responsive" src="resources/images/banner5.jpg" alt=" "/>
+							<img class="img-responsive" src="/resources/images/banner5.jpg" alt=" "/>
 						</li>
 						<li>
-							<img class="img-responsive" src="resources/images/banner3.jpg" alt=" "/>
+							<img class="img-responsive" src="/resources/images/banner3.jpg" alt=" "/>
 						</li>
 
 					</ul>
@@ -263,262 +267,114 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <!--펀딩 목록-->
-	<br>
-				<div class="col-md-4 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
+	<br>			               
+
+<%--                      <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
+    --%>
+              
+               <c:forEach items="${list}" var="project">
+					<div class="col-md-4 product-men">
+								<div class="men-pro-item simpleCart_shelfItem" style="margin-left:10px;">
 									<div class="men-thumb-item">
-										<img src="resources/images/123.png" alt="" class="pro-image-front">
-										<img src="resources/images/123.png" alt="" class="pro-image-back">
+										<%--<img src="${project.title_image}" alt="" class="pro-image-front"> --%>
+										<c:if test="${not empty project.title_image}">
+											<a href="/resources/upload/${project.title_image}" target="_blank" class="pro-image-front"><img src="/resources/upload/${project.title_image}"></a>
+										</c:if>
+										
+										<img src="/resources/images/123.png" alt="" class="pro-image-back">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="single" class="link-product-add-cart">view Funding</a>
+													<a href="/front/single" class="link-product-add-cart">view Funding</a>
 												</div>
 											</div>
-											<span class="product-new-top">SIBAL</span>
+											<span class="product-new-top">진행중</span>
 									</div>
 									<hr>
 									<div class="item-info-product ">
-										<h4><a href="single">제목 (펀딩)</a></h4>
+										<h4><a href="single"><c:out value="${project.simple_content}" /></a></h4>
 										<div class="info-product-price">
-											<span class="item_price">$투자 금액</span>
-											<p>(카테고리)</p>
-											<p>(그래프)</p>
-											<p>(펀딩기간)</p>
+											<p><c:out value="${project.category}"/></p>
+											            <div class="progress" style="width:90%; height:7px; margin:0 auto;">
+											              <div class="progress-bar progress-bar-success" style="width:70%"></div>
+											              <!--모금현황-->
+											            </div>
+											           <div><ul><c:out value="${project.current_invest}원"/> 31일<p style="text-align: right"></p></ul></div>
+											           <c:out value="${project.project_start}" />
+											           <%--  <span class="item_price"><c:out value="${project.current_invest}원" /></span> --%>
+											
 										</div>
 									</div>
 								</div>
-							</div>
-
-
-			<div class="col-md-4 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="resources/images/123.png" alt="" class="pro-image-front">
-										<img src="resources/images/123.png" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single" class="link-product-add-cart">view Funding</a>
-												</div>
-											</div>
-											<span class="product-new-top">SIBAL</span>
-									</div>
-									<hr>
-									<div class="item-info-product ">
-										<h4><a href="single">제목 (펀딩)</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$투자 금액</span>
-											<p>(카테고리)</p>
-											<p>(그래프)</p>
-											<p>(펀딩기간)</p>
-										</div>
-
-
-									</div>
-								</div>
-							</div>
-			<div class="col-md-4 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="resources/images/123.png" alt="" class="pro-image-front">
-										<img src="resources/images/123.png" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single" class="link-product-add-cart">view Funding</a>
-												</div>
-											</div>
-											<span class="product-new-top">SIBAL</span>
-									</div>
-									<hr>
-									<div class="item-info-product ">
-										<h4><a href="single">제목 (펀딩)</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$투자 금액</span>
-											<p>(카테고리)</p>
-											<p>(그래프)</p>
-											<p>(펀딩기간)</p>
-										</div>
-
-
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4 product-men">
-												<div class="men-pro-item simpleCart_shelfItem">
-													<div class="men-thumb-item">
-														<img src="resources/images/123.png" alt="" class="pro-image-front">
-														<img src="resources/images/123.png" alt="" class="pro-image-back">
-															<div class="men-cart-pro">
-																<div class="inner-men-cart-pro">
-																	<a href="single" class="link-product-add-cart">view Funding</a>
-																</div>
-															</div>
-															<span class="product-new-top">SIBAL</span>
-
-													</div>
-													<hr>
-													<div class="item-info-product ">
-														<h4><a href="single">제목 (펀딩)</a></h4>
-														<div class="info-product-price">
-															<span class="item_price">$투자 금액</span>
-															<p>(카테고리)</p>
-															<p>(그래프)</p>
-															<p>(펀딩기간)</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-
-											<div class="col-md-4 product-men">
-																<div class="men-pro-item simpleCart_shelfItem">
-																	<div class="men-thumb-item">
-																		<img src="resources/images/123.png" alt="" class="pro-image-front">
-																		<img src="resources/images/123.png" alt="" class="pro-image-back">
-																			<div class="men-cart-pro">
-																				<div class="inner-men-cart-pro">
-																					<a href="single" class="link-product-add-cart">view Funding</a>
-																				</div>
-																			</div>
-																			<span class="product-new-top">SIBAL</span>
-																	</div>
-																	<hr>
-																	<div class="item-info-product ">
-																		<h4><a href="single">제목 (펀딩)</a></h4>
-																		<div class="info-product-price">
-																			<span class="item_price">$투자 금액</span>
-																			<p>(카테고리)</p>
-																			<p>(그래프)</p>
-																			<p>(펀딩기간)</p>
-																		</div>
-
-
-																	</div>
-																</div>
-															</div>
-
-															<div class="col-md-4 product-men">
-																				<div class="men-pro-item simpleCart_shelfItem">
-																					<div class="men-thumb-item">
-																						<img src="resources/images/123.png" alt="" class="pro-image-front">
-																						<img src="resources/images/123.png" alt="" class="pro-image-back">
-																							<div class="men-cart-pro">
-																								<div class="inner-men-cart-pro">
-																									<a href="single" class="link-product-add-cart">view Funding</a>
-																								</div>
-																							</div>
-																							<span class="product-new-top">SIBAL</span>
-
-																					</div>
-																					<hr>
-																					<div class="item-info-product ">
-																						<h4><a href="single">제목 (펀딩)</a></h4>
-																						<div class="info-product-price">
-																							<span class="item_price">$투자 금액</span>
-																							<p>(카테고리)</p>
-																							<p>(그래프)</p>
-																							<p>(펀딩기간)</p>
-																						</div>
-
-
-																					</div>
-																				</div>
-																			</div>
-
-																			<div class="col-md-4 product-men">
-																								<div class="men-pro-item simpleCart_shelfItem">
-																									<div class="men-thumb-item">
-																										<img src="resources/images/123.png" alt="" class="pro-image-front">
-																										<img src="resources/images/123.png" alt="" class="pro-image-back">
-																											<div class="men-cart-pro">
-																												<div class="inner-men-cart-pro">
-																													<a href="single" class="link-product-add-cart">view Funding</a>
-																												</div>
-																											</div>
-																											<span class="product-new-top">SIBAL</span>
-
-																									</div>
-																									<hr>
-																									<div class="item-info-product ">
-																										<h4><a href="single">제목 (펀딩)</a></h4>
-																										<div class="info-product-price">
-																											<span class="item_price">$투자 금액</span>
-																											<p>(카테고리)</p>
-																											<p>(그래프)</p>
-																											<p>(펀딩기간)</p>
-																										</div>
-
-
-																									</div>
-																								</div>
-																							</div>
-
-																							<div class="col-md-4 product-men">
-																												<div class="men-pro-item simpleCart_shelfItem">
-																													<div class="men-thumb-item">
-																														<img src="resources/images/123.png" alt="" class="pro-image-front">
-																														<img src="resources/images/123.png" alt="" class="pro-image-back">
-																															<div class="men-cart-pro">
-																																<div class="inner-men-cart-pro">
-																																	<a href="single" class="link-product-add-cart">view Funding</a>
-																																</div>
-																															</div>
-																															<span class="product-new-top">SIBAL</span>
-
-																													</div>
-																													<hr>
-																													<div class="item-info-product ">
-																														<h4><a href="single">제목 (펀딩)</a></h4>
-																														<div class="info-product-price">
-																															<span class="item_price">$투자 금액</span>
-																															<p>(카테고리)</p>
-																															<p>(그래프)</p>
-																															<p>(펀딩기간)</p>
-																														</div>
-
-
-																													</div>
-																												</div>
-																											</div>
-
-																											<div class="col-md-4 product-men">
-																																<div class="men-pro-item simpleCart_shelfItem">
-																																	<div class="men-thumb-item">
-																																		<img src="resources/images/123.png" alt="" class="pro-image-front">
-																																		<img src="resources/images/123.png" alt="" class="pro-image-back">
-																																			<div class="men-cart-pro">
-																																				<div class="inner-men-cart-pro">
-																																					<a href="single" class="link-product-add-cart">view Funding</a>
-																																				</div>
-																																			</div>
-																																			<span class="product-new-top">SIBAL</span>
-																																	</div>
-																																	<hr>
-																																	<div class="item-info-product ">
-																																		<h4><a href="single">제목 (펀딩)</a></h4>
-																																		<div class="info-product-price">
-																																			<span class="item_price">$투자 금액</span>
-																																			<p>(카테고리)</p>
-																																			<p>(그래프)</p>
-																																			<p>(펀딩기간)</p>
-																																		</div>
-
-
-																																	</div>
-																																</div>
-																															</div>
-
+					</div>
+				 </c:forEach>
+				 
+				 
+				 		 
 				<div class="clearfix"></div>
-		</div>
-
-
-
-
-
-
-
+				 
 	</div>
+	
+	        <!-- 검색 영역 시작 -->
+				<div class='row'>
+					<div class="col-lg-12">
+						<form id='searchForm' action="/front/project" method='get'>
+							<select name='type'>
+								<option value=""
+									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
+								<option value="T"
+									<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
+								<option value="C"
+									<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>카테고리</option>
+								<option value="W"
+									<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
+								<option value="TC"
+									<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목
+									or 내용</option>
+								<option value="TW"
+									<c:out value="${pageMaker.cri.type eq 'TW'?'selected':''}"/>>제목
+									or 작성자</option>
+								<option value="TWC"
+									<c:out value="${pageMaker.cri.type eq 'TWC'?'selected':''}"/>>제목
+									or 내용 or 작성자</option>
+							</select>
+							<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword}"/>' />
+							<input type='hidden' name='pageNum'	value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+							<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
+							<button class='btn btn-default'>Search</button>
+						</form>
+					</div>
+				</div>
+			<div class='pull-right'>
+               <ul class="pagination">
+
+                  <c:if test="${pageMaker.prev}">
+                     <li class="paginate_button previous"><a href="${pageMaker.startPage -1}">Previous</a></li>
+                  </c:if>
+
+                  <c:forEach var="num" begin="${pageMaker.startPage}"   end="${pageMaker.endPage}">
+                     <li class="paginate_button  ${pageMaker.cri.pageNum == num ? "active":""} ">
+                        <a href="${num}">${num}</a>
+                     </li>
+                  </c:forEach>
+
+                  <c:if test="${pageMaker.next}">
+                     <li class="paginate_button next"><a href="${pageMaker.endPage +1 }">Next</a></li>
+                  </c:if> 
+
+               </ul>
+            </div>
+            
+             <!-- Form 시작 -->
+            <form id='actionForm' action="/front/project" method='get'>
+            <input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
+            <input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+            <input type='hidden' name='type' value='<c:out value="${ pageMaker.cri.type }"/>'>
+            <input type='hidden' name='keyword'   value='<c:out value="${ pageMaker.cri.keyword }"/>'>
+            </form>
+		</div>
+		<!-- 페이징 관련 설정 여기까지 -->
+		
 </div>
 <!-- //mens -->
 <!--/grids-->
@@ -685,9 +541,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //login -->
 <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- js -->
-<script type="text/javascript" src="resources/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
-<script src="resources/js/responsiveslides.min.js"></script>
+<script src="/resources/js/responsiveslides.min.js"></script>
 				<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
@@ -707,10 +563,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 						});
 				</script>
-<script src="resources/js/modernizr.custom.js"></script>
+<script src="/resources/js/modernizr.custom.js"></script>
 	<!-- Custom-JavaScript-File-Links -->
 	<!-- cart-js -->
-	<script src="resources/js/minicart.min.js"></script>
+	<script src="/resources/js/minicart.min.js"></script>
 <script>
 	// Mini Cart
 	paypal.minicart.render({
@@ -739,11 +595,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});//]]>
 
 							</script>
-						<script type="text/javascript" src="resources/js/jquery-ui.js"></script>
+						<script type="text/javascript" src="/resources/js/jquery-ui.js"></script>
 					 <!---->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="resources/js/move-top.js"></script>
-<script type="text/javascript" src="resources/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/resources/js/move-top.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){
@@ -770,8 +626,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 <!-- //here ends scrolling icon -->
 
+<!-- 페이징이나 여러 기능과 관련된 스크립트 -->
+<script type="text/javascript">
+   $(document).ready(function() {
+      var result = '<c:out value="${result}"/>';
+      
+      checkModal(result);
+
+      history.replaceState({}, null, null);
+
+      function checkModal(result) {
+
+         if (result === '' || history.state) {
+            return;
+         }
+
+         if (parseInt(result) > 0) {
+            $(".modal-body").html("게시글 " + parseInt(result)   + " 번이 등록되었습니다.");
+         }
+
+         $("#myModal").modal("show");
+      }
+      
+      $("#regBtn").on("click", function() {
+         self.location = "/board/register";
+      });
+   });
+   
+   var actionForm = $("#actionForm");
+
+    // 페이지 번호 클릭 이벤트
+    $(".paginate_button a").on("click", function(e) {
+       e.preventDefault();
+       // console.log('click');
+       actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+       actionForm.submit();
+    });
+    
+    // 상세보기 클릭 이벤트
+    $(".move").on("click",function(e) {
+       e.preventDefault();
+       actionForm.append("<input type='hidden' name='bno' value='" + $(this).attr("href")   + "'>");
+       actionForm.attr("action", "/board/get");
+       actionForm.submit();
+    });
+    
+ 	// 검색 버튼 클릭 이벤트
+	var searchForm = $("#searchForm");
+	$("#searchForm button").on("click",	function(e) {
+		if (!searchForm.find("option:selected").val()) {
+			alert("검색종류를 선택하세요");
+			return false;
+		}
+
+		if (!searchForm.find("input[name='keyword']").val()) {
+			alert("키워드를 입력하세요");
+			return false;
+		}
+		
+		searchForm.find("input[name='pageNum']").val("1");
+		e.preventDefault();
+		searchForm.submit();
+	});
+    
+</script>
+<!-- 페이징이나 여러 기능과 관련된 스크립트 여기까지 -->
+
 <!-- for bootstrap working -->
-<script type="text/javascript" src="resources/js/bootstrap.js"></script>
-<script type="text/javascript" src="resources/js/bootstrap2.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap2.js"></script>
 </body>
 </html>

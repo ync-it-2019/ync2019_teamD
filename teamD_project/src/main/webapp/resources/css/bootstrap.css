@@ -2589,6 +2589,9 @@ fieldset[disabled] .form-control {
 textarea.form-control {
   height: auto;
 }
+textarea.enquiry-form{
+  height: 30em;
+}
 input[type="search"] {
   -webkit-appearance: none;
 }

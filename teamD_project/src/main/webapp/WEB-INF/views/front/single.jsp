@@ -183,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 </script>
   <!--바 그래프-->
-<script src="resources/js/zingchart.min.js"></script>
+<script src="/resources/js/zingchart.min.js"></script>
 
   <!--여기까지-->
 
@@ -211,12 +211,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     }
   </script>
   <!-- //tags -->
-  <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="resources/css/jiwon.css" rel="stylesheet" type="text/css" media="all" />
-  <link rel="stylesheet" href="resources/css/flexslider.css" type="text/css" media="screen" />
-  <link href="resources/css/font-awesome.css" rel="stylesheet">
-  <link href="resources/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-  <link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="/resources/css/jiwon.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="/resources/css/flexslider.css" type="text/css" media="screen" />
+  <link href="/resources/css/font-awesome.css" rel="stylesheet">
+  <link href="/resources/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+  <link href="/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
   <!-- //for bootstrap working -->
   <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
@@ -370,7 +370,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
           </div>
           <div class="col-md-4 modal_body_right modal_body_right1">
-            <img src="resources/images/log_pic.jpg" alt=" " />
+            <img src="/resources/images/log_pic.jpg" alt=" " />
           </div>
           <div class="clearfix"></div>
         </div>
@@ -436,7 +436,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
           </div>
           <div class="col-md-4 modal_body_right modal_body_right1">
-            <img src="resources/images/log_pic.jpg" alt=" " />
+            <img src="/resources/images/log_pic.jpg" alt=" " />
           </div>
           <div class="clearfix"></div>
         </div>
@@ -526,12 +526,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="progress-bar progress-bar-success" style="width: 70%">70%</div>
               <!--모금현황-->
             </div>
-            <h3>120%</h3>% 달성
+            <p><span style="font-size: 25px;">120</span>% 달성</p>
             <br>
             <br>
-            <h3><span class="item_price">150,000</span></h3><p>원 펀딩</p>
+            <p><span class="item_price" style="font-size: 25px;">150,000</span>원 펀딩</p>
             <br>
-            <h3>100</h3>명의 투자자
+            <p><span style="font-size: 25px;">100</span>명의 투자자</p>
             <br>
             <!-- <h3>현재 <code>150,000.</code>원 모금됨.</h3> -->
             <br>
@@ -657,7 +657,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="clearfix"> </div>
 
       <!-- /new_arrivals -->
-      <div class="responsive_tabs_agileits" style="width:960px; margin:0 auto; overflow:hidden;">
+      <div class="responsive_tabs_agileits" style="width:960px; margin:0 auto; padding-bottom:30px; overflow:hidden;">
         <div id="horizontalTab">
           <ul class="resp-tabs-list" style="width: 500px;
                                       margin-left: auto;
@@ -675,11 +675,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
                 <h2>스토리</h2>
-                <img src="resources/images/content.jpg" style="width:900px;">
+                <img src="/resources/images/content.jpg" style="width:900px;">
                 <p>설명</p>
                 <p class="w3ls_para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod
                   tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
-                  <img src="resources/images/content2.gif" style="width:900px;">
+                  <img src="/resources/images/content2.gif" style="width:900px;">
 
               </div>
 
@@ -745,13 +745,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="bootstrap-tab-text-grids">
   <div class="bootstrap-tab-text-grid">
   <div class="media border p-3">
-    <img src="resources/images/t2.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+    <img src="/resources/images/t2.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
     <div class="media-body">
       <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="media p-3">
-        <img src="resources/images/t1.jpg" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+        <img src="/resources/images/t1.jpg" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
         <div class="media-body">
           <h4>Jane Doe <small><i>Posted on February 20 2016</i></small></h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -989,12 +989,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- //login -->
   <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
   <!-- js -->
-  <script type="text/javascript" src="resources/js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery-2.1.4.min.js"></script>
   <!-- //js -->
-  <script src="resources/js/modernizr.custom.js"></script>
+  <script src="/resources/js/modernizr.custom.js"></script>
   <!-- Custom-JavaScript-File-Links -->
   <!-- cart-js -->
-  <script src="resources/js/minicart.min.js"></script>
+  <script src="/resources/js/minicart.min.js"></script>
   <script>
     // Mini Cart
     paypal.minicart.render({
@@ -1008,10 +1008,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
   <!-- //cart-js -->
   <!-- single -->
-  <script src="resources/js/imagezoom.js"></script>
+  <script src="/resources/js/imagezoom.js"></script>
   <!-- single -->
   <!-- script for responsive tabs -->
-  <script src="resources/js/easy-responsive-tabs.js"></script>
+  <script src="/resources/js/easy-responsive-tabs.js"></script>
   <script>
     $(document).ready(function() {
       $('#horizontalTab').easyResponsiveTabs({
@@ -1035,7 +1035,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
   </script>
   <!-- FlexSlider -->
-  <script src="resources/js/jquery.flexslider.js"></script>
+  <script src="/resources/js/jquery.flexslider.js"></script>
   <script>
     // Can also be used with $(document).ready()
     $(window).load(function() {
@@ -1048,8 +1048,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- //FlexSlider-->
   <!-- //script for responsive tabs -->
   <!-- start-smoth-scrolling -->
-  <script type="text/javascript" src="resources/js/move-top.js"></script>
-  <script type="text/javascript" src="resources/js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="/resources/js/move-top.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $(".scroll").click(function(event) {
@@ -1081,8 +1081,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- //here ends scrolling icon -->
 
   <!-- for bootstrap working -->
-  <script type="text/javascript" src="resources/js/bootstrap.js"></script>
-  <script type="text/javascript" src="resources/js/bootstrap2.js"></script>
+  <script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/resources/js/bootstrap2.js"></script>
 
 </body>
 

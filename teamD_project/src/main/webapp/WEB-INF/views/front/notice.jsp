@@ -219,7 +219,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-4 contact-grid-agile-w3">
 						<div class="contact-grid-agile-w33">
-							<a href="fqa"><h4>FQA</h4></a>
+							<a href="fqa"><h4>FAQ</h4></a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>

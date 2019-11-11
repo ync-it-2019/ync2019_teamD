@@ -237,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 contact-grid-agile-w3">
 					<div class="contact-grid-agile-w33">
 						<a href="fqa">
-							<h4>FQA</h4>
+							<h4>FAQ</h4>
 						</a>
 					</div>
 				</div>
@@ -265,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</tr>
 								<tr>
 									<th>내용: </th>
-									<td><textarea cols="100" placeholder="악의적인 비난, 욕설을 삼가해주세요. " name="content" class="form-control"></textarea></td>
+									<td><textarea class="enquiry-form" cols="100" placeholder="악의적인 비난, 욕설을 삼가해주세요. " name="content" class="form-control"></textarea></td>
 								</tr>
 								<tr>
 									<th>비밀번호: </th>

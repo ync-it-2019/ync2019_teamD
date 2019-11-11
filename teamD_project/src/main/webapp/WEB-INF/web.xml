@@ -38,7 +38,8 @@
 		commit 시 경로를 팀별로 맞게 /home/team_a/upload 수정!!!
 		 -->
 		<multipart-config>
-			<location>/home/team_a/upload</location>
+			<!--<location>/home/team_a/upload</location>-->
+			<location>D:\\2019_Spring\\teamD_project\\src\\main\\webapp\\resources\\upload</location>
 			<max-file-size>20971520</max-file-size> <!--1MB * 20 -->
 			<max-request-size>41943040</max-request-size><!-- 40MB -->
 			<file-size-threshold>20971520</file-size-threshold> <!-- 20MB -->

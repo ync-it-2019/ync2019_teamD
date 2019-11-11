@@ -1,41 +1,220 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ync.project.front.mapper.ProjectMapper"> <!-- 인터페이스와 이름동일 -->
+<!-- 10-31 임시로 Date부분 뺌 -->	
+		<!-- getListWithPaging에서 where에 include해서 이 코드 불러오기도 가능 -->
+	<sql id = "criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item= 'type' collection = "typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							simple_content like '%' ||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							category like '%' ||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							company like '%' ||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	
+	<select id="getListWithPaging" resultType="com.ync.project.domain.ProjectVO">
+		<![CDATA[
+		SELECT project_num,
+			   category,
+			   title_image,
+			   simple_content,
+			   company,
+			   current_invest,
+			   achive_invest,
+			   project_end
+	    FROM (
+	    	  SELECT /*+INDEX_DESC(teamd_project xpkteamd_project) */
+	    	   rownum rn,
+	    	   project_num,
+			   category,
+			   title_image,
+			   simple_content,
+			   company,
+			   current_invest,
+			   achive_invest,
+			   project_end
+	    	  FROM teamd_project
+	    	  WHERE
+		]]>
+		<include refid = "criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount}
+			)
+		WHERE rn > (#{pageNum} -1) * #{amount}
+				
+		]]>
+	</select>
+	
+		<!-- 11월 04일 추가 카테고리 버튼 이벤트 -->
+		<select id="getListWithPagingCategory" resultType="com.ync.project.domain.ProjectVO">
+		<![CDATA[
+		SELECT project_num,
+			   category,
+			   title_image,
+			   simple_content,
+			   company,
+			   current_invest,
+			   achive_invest,
+			   project_end
+	    FROM (
+	    	  SELECT /*+INDEX_DESC(teamd_project xpkteamd_project) */
+	    	   rownum rn,
+	    	   project_num,
+			   category,
+			   title_image,
+			   simple_content,
+			   company,
+			   current_invest,
+			   achive_invest,
+			   project_end
+	    	  FROM teamd_project
+	    	  WHERE
+		]]>
+		<include refid = "criteria"></include>
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount}
+			AND CATEGORY = '#{category}'
+			)
+		WHERE rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	
+	<select id="getList" resultType="com.ync.project.domain.ProjectVO">
+	<![CDATA[
+		SELECT * FROM teamd_project WHERE project_num > 0
+		]]>
+	</select>
+	
 
 	
 	<insert id="insert">
-		INSERT INTO 테이블명(projcet_num,
-						  email,
+		INSERT INTO teamd_project(project_num,
 						  category,
 						  title_image,
 						  simple_content, 
-						  phone, 
-						  project_start, 
-						  project_end,
+						  detail_content,
+						  phone,
+						  userid,
 						  current_invest,
 						  achive_invest,
 						  attach_1,
 						  attach_2,
 						  attach_3,
-						  company)
-		VALUES (seq_board.nextval,
-		        #{email}, 
+						  company,
+						  contents_image1,
+						  contents_image2)
+		VALUES (teamd_seq_project.nextval,
 		        #{category}, 
 		        #{title_image},
 		        #{simple_content}, 
+		        #{detail_content},
 		        #{phone}, 
-		        #{project_start},
-		        #{project_end},
+		        'user',
 		        #{current_invest},
 		        #{achive_invest},
 		        #{attach_1},
 		        #{attach_2},
 		        #{attach_3},
-		        #{company})
-	</insert><!-- 마이바티스트에서 getter를 불러서 넣어줌 -->
-	<!-- #은 mybatist문법  Preparestmt(?) 에서 ?에  setTitle()이렇게 하나하나 값넣었던거랑 같음 -->
+		        #{company},
+		        #{contents_image1},
+		        #{contents_image2})
+	</insert>
 	
+	<insert id="insertSelectKey"><!-- 몇번째 게시물입니다 이런거 띄울려고 하는거. 필요없음 -->
 
+		<selectKey keyProperty="project_num" order="BEFORE"
+			resultType="long">
+			SELECT teamd_seq_project.nextval FROM dual <!-- 현재 시퀀스 번호 가져옴. 데이터베이스에서 등록되어 있는듯 -->
+		</selectKey>
+	<!-- 컨트롤 쉬프트 x = 대문자로 변환, 컨트롤 쉬프트 y 소문자 변환 -->
+		INSERT INTO teamd_project(
+						  project_num,
+		   				  category,
+		   				  simple_content,
+		   				  phone,
+		   				  achive_invest,
+		   				  title_image,
+		   				  attach_1,
+		   				  project_start,
+		   				  project_end,
+		   				  userid,
+						  company,
+						  contents_image1,
+						  contents_image2,
+						  attach_2,
+						  attach_3,
+						  detail_content  
+						  )
+		VALUES (#{project_num},
+		        #{category}, 
+		        #{simple_content}, 
+		        #{phone},
+		        #{achive_invest},
+		        #{title_image},
+		        #{attach_1},
+		        #{project_start},
+		        #{project_end},
+		   		'user',
+		   		'서영',
+		   		#{contents_image1},
+		        #{contents_image2},
+		        #{attach_2},
+		        #{attach_3},
+		        #{detail_content}
+		        )
+	</insert>
+	
+	
+	<!-- select -->
+	<select id="read" resultType = "com.ync.project.domain.ProjectVO">
+		SELECT * FROM teamd_project where project_num = #{project_num}
+	</select>
+	
+	
+	<!-- delete -->
+	<delete id="delete">
+		delete from teamd_project where project_num = #{project_num}
+		
+	</delete>
+	
+		<!-- update -->
+	<update id="update">
+		UPDATE teamd_project SET project_num = #{project_num},
+							  	 category = #{category},
+							 	 title_image = #{title_image},
+							  	 simple_content = #{simple_content},
+							  	 detail_content = #{detail_content},
+							  	 phone = #{phone},
+							  	 attach_1 = #{attach_1},
+							  	 attach_2 = #{attach_2},
+							  	 attach_3 = #{attach_3},
+							  	 company = #{company},
+							  	 contents_image1 = #{contents_image1},
+							  	 contents_image2 = #{contents_image2},
+							  	 project_modified = sysdate
+							  	 WHERE project_num = #{project_num}
+	</update>
+	
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT count(*) 
+		FROM teamd_project
+		WHERE project_num > 0
+	</select>
+	
 	
 	
 </mapper>
