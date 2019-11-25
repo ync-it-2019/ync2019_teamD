@@ -481,7 +481,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="grid images_3_of_2"  >
 
               <div class="flexslider">
-                <div class="thumb-image"> <img src="http://placehold.it/650x350" data-imagezoom="true" class="img-responsive"> </div>
+                <%--11월20일 이미지 띄움 --%>
+                <c:if test="${not empty project.title_image}">
+						<div class="thumb-image"> <img src="/resources/upload/${project.title_image}" data-imagezoom="true" class="img-responsive" style="width:650px; height: 350px;"> </div>
+				</c:if>
+				
                 <div class="clearfix"></div>
               </div>
             </div>

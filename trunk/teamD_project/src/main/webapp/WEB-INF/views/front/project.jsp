@@ -292,7 +292,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<hr>
 									<div class="item-info-product ">
-										<h4><a href="single"><c:out value="${project.simple_content}" /></a></h4>
+										<h4><a href="single?project_num=${project.project_num}"><c:out value="${project.simple_content}" /></a></h4>
 										<div class="info-product-price">
 											<p><c:out value="${project.category}"/></p>
 											            <div class="progress" style="width:90%; height:7px; margin:0 auto;">
