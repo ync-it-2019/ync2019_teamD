@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -186,10 +188,12 @@ public class ProjectController {
 	  * @Date : 2019. 11. 5.
 	  * @작성자 : 이지원
 	 */
-	@GetMapping(value = "/single")
-	public void projectDetail() {
-
+	@GetMapping("/single")
+	public void projectDetail(@RequestParam("project_num") Long pno, @ModelAttribute("cri") Criteria cri, Model model) {
+		
 		log.info("Welcome projectDetail!");
+
+	    model.addAttribute("project", service.get(pno));
 	
 	}
 

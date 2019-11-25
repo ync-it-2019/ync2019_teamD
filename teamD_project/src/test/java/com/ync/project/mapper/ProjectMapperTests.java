@@ -80,29 +80,29 @@ public class ProjectMapperTests {
 //		log.info(board);
 //	}
 	
-	@Test
-	public void testInsertSelectKey() {
-
-		ProjectVO board = new ProjectVO();
-		board.setCategory("테크/가전  새로 추가한 글");
-		board.setTitle_image("fsdfsf  11-05");
-		board.setSimple_content("심플 컨텐츠  11-05");
-		board.setDetail_content("setDetail_content");
-		board.setPhone("010-1111-1111");
-//		board.setProject_start(time);
-//		board.setProject_end(time);
-		board.setAchive_invest(1000000);
-		board.setAttach_1("setAttach_1");
-		board.setAttach_2("setAttach_2");
-		board.setAttach_3("setAttach_3");
-		board.setCompany("이지컴퍼니");
-		board.setContents_image1("setContents_image1");
-		board.setContents_image2("setContents_image2");
-		
-		mapper.insertSelectKey(board);
-
-		log.info(board);
-	}
+//	@Test
+//	public void testInsertSelectKey() {
+//
+//		ProjectVO board = new ProjectVO();
+//		board.setCategory("테크/가전  새로 추가한 글");
+//		board.setTitle_image("fsdfsf  11-05");
+//		board.setSimple_content("심플 컨텐츠  11-05");
+//		board.setDetail_content("setDetail_content");
+//		board.setPhone("010-1111-1111");
+////		board.setProject_start(time);
+////		board.setProject_end(time);
+//		board.setAchive_invest(1000000);
+//		board.setAttach_1("setAttach_1");
+//		board.setAttach_2("setAttach_2");
+//		board.setAttach_3("setAttach_3");
+//		board.setCompany("이지컴퍼니");
+//		board.setContents_image1("setContents_image1");
+//		board.setContents_image2("setContents_image2");
+//		
+//		mapper.insertSelectKey(board);
+//
+//		log.info(board);
+//	}
 	
 	/**
 	 * 
@@ -111,14 +111,14 @@ public class ProjectMapperTests {
 	  * @Date : 2019. 10. 23.
 	  * @작성자 : 이지원
 	 */
-//	@Test
-//	public void testRead() {
-//
-//		// 존재하는 게시물 번호로 테스트
-//		ProjectVO board = mapper.read(7L); //long형이라 L붙여줌
-//
-//		log.info(board);
-//	}
+	@Test
+	public void testRead() {
+
+		// 존재하는 게시물 번호로 테스트
+		ProjectVO board = mapper.read(66L); //long형이라 L붙여줌
+
+		log.info(board);
+	}
 	
 	/**
 	 * 

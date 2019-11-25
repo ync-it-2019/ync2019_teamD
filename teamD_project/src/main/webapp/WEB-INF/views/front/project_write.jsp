@@ -346,15 +346,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="jumbotron">
               <img src="/resources/images/uploadPicture.png" class="setSize60"><br><br><br>
               <%-- <input type="file" class="setSize60" name="contents_image1"><br> --%>
-              <input type="file" class="form-control-file border"  name="uploadFile">
+              <input type="file" class="form-control-file border"  name="uploadFile" style="margin-left:100px;">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="jumbotron">
               <img src="/resources/images/uploadPicture.png" class="setSize60"><br><br><br>
-              
-              <%--<input type="file" class="setSize60" name="contents_image2">--%><br> 
-           	  <input type="file" class="form-control setSize60"  name="uploadFile">
+              <%--<input type="file" class="setSize60" name="contents_image2">--%> 
+           	  <input type="file" class="form-control-file border"  name="uploadFile" style="margin-left:100px;">
             </div>
           </div>
           <div class="row">
