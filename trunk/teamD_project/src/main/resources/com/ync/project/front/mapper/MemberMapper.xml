@@ -61,7 +61,8 @@
 				nickname,
 				profile_image,
 				account,
-				job
+				job,
+				bank
 		FROM	teamd_member
 		WHERE	userid = #{userid}
 	</select>
