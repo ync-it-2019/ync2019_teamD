@@ -360,16 +360,19 @@ String contentUserId="";
 
 
 
-					<!--투자버튼 여기부터 시작-->
+					<!--투자버튼 여기부터 시작-->		
 												<sec:authorize access="isAnonymous()">
-													<a href="#" onclick="myPageLogin()"
-														class='btn btn-primary btn-xs pull-right' style="width:400px; height:35px;"><h3>투자하기</h3></a>
+													
+														<a href="#" onclick="myPageLogin()" class='btn btn-primary btn-xs pull-right' style="width:400px; height:35px;"><h3>투자하기</h3></a>
 												</sec:authorize>
 												
 												<sec:authorize access="isAuthenticated()">
-													<button type="button" class="btn btn-primary" data-toggle="modal"
-														    data-target="#invest_button" style="width: 400px;" id="test2">
-													투자하기</button>
+													<c:if test="${not empty login_info.bank}">
+														<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="test2">투자하기</button>	
+													</c:if>
+													<c:if test="${empty login_info.bank}">
+														<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="iregister" onclick="location.href='../investorjoin'">투자자 등록하기</button>	
+													</c:if>
 												</sec:authorize>
 					
 					
@@ -1064,22 +1067,6 @@ console.log(operation);
 if (operation === 'remove') {
 formObj.attr("action","/front/remove_standBy");
 }
-			<%--else if(operation === 'list') {
-         //move to list
-         formObj.attr("action", "/board/list").attr("method","get");
-         
-         var pageNumTag = $("input[name='pageNum']").clone();
-         var amountTag = $("input[name='amount']").clone();
-         var keywordTag = $("input[name='keyword']").clone();
-         var typeTag = $("input[name='type']").clone();      
-         
-         formObj.empty();
-         
-         formObj.append(pageNumTag);
-         formObj.append(amountTag);
-         formObj.append(keywordTag);
-         formObj.append(typeTag);          
-       }--%>
 				formObj.submit();
 	});
 });
@@ -1091,14 +1078,7 @@ formObj.attr("action","/front/remove_standBy");
 		</div>
 	</div>
 	<!-- //new_arrivals -->
-	<!--/slider_owl-->
 
-
-
-	<!--//single_page-->
-	<!--/grids-->
-
-	<!--grids-->
 	<!-- footer -->
 	<div class="footer">
 		<div class="footer_agile_inner_info_w3l">
