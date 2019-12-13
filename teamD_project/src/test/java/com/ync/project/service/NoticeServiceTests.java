@@ -21,11 +21,11 @@ public class NoticeServiceTests {
 	@Autowired
 	private NoticeService service;
 	
-//	@Test
-//	public void testExist() {
-//		log.info(service);
-//		assertNotNull(service);
-//	}
+	@Test
+	public void testExist() {
+		log.info(service);
+		assertNotNull(service);
+	}
 	
 //	@Test //게시글 추가 등록
 //	public void testRegister() {

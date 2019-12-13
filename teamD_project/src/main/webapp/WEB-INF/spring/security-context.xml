@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 인증관련 빈 설정 -->
+	<bean id="customLoginSuccess" class="com.ync.project.security.CustomLoginSuccessHandler"></bean>
+	<bean id="CustomLogoutSuccessHandler" class="com.ync.project.security.CustomLogoutSuccessHandler"></bean>
 	<bean id="customAccessDenied" class="com.ync.project.security.CustomAccessDeniedHandler"></bean>
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 	<bean id="customUserDetailsService"	class="com.ync.project.security.CustomUserDetailsService"></bean>
@@ -13,12 +15,12 @@
 	<security:http>
 			
 		<security:intercept-url	pattern="/front/all" access="permitAll" /> <!--role_member라는 권한을 가지고 있으면. 672페이지 참고  -->
+		<security:intercept-url	pattern="/front/all" access="hasRole('ROLE_USER')" />
 		
-		<security:form-login login-page="/customLogin" />
+		<security:form-login login-page="/login" authentication-success-handler-ref="customLoginSuccess" />
+		<security:logout logout-url="/logout" invalidate-session="true" success-handler-ref="CustomLogoutSuccessHandler"/>
 		
 		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
-
-		<security:logout logout-url="/customLogout"	invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
 		
 		<security:access-denied-handler ref="customAccessDenied" />
 		
@@ -29,5 +31,6 @@
 			<security:password-encoder ref="bcryptPasswordEncoder" />
 		</security:authentication-provider>
 	</security:authentication-manager>
+	
 	
 </beans>

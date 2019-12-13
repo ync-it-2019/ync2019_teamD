@@ -1,21 +1,19 @@
 /**
  * 댓글용 module 
- * jQuery의 $.ajax, $.getJSON 등을 이용해 비동기방식으로 data(json 포맷 등)를 주고 받는
- * 문법, 방법을 이해해야 한다. 
  */
 
-console.log("Reply Module........");
+console.log("Ripple Module........");
 
-var replyService = (function() {
+var RippleService = (function() {
 
 	// 댓글 추가
-	function add(reply, callback, error) {
-		console.log("add reply...............");
+	function add(content, callback, error) {
+		console.log("add ripple...............");
 
 		$.ajax({
 			type : 'post',
 			url : '/replies/new',
-			data : JSON.stringify(reply), // JavaScript 값이나 객체를 JSON 문자열로 변환
+			data : JSON.stringify(content), // JavaScript 값이나 객체를 JSON 문자열로 변환
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) { // (Anything data(서버에서 받은 data), String textStatus, jqXHR jqXHR )
 				if (callback) {
@@ -25,87 +23,30 @@ var replyService = (function() {
 			error : function(xhr, status, err) {
 				if (error) {
 					// error 발생 시 응답 메세지와 err code를 alert 시킨다. 
-					error(xhr.responseText, xhr.status);
+					error(err);
 				}
 			}
 		});
-	}
-	
-	// 댓글 목록
-	function getList(param, callback, error) {
-		console.log("getList reply..............");
-		
-		var bno = param.bno;
-		var page = param.page || 1; // param.page 가 null 이면 1로 설정 
-		
-		$.getJSON("/replies/pages/" + bno + "/" + page + ".json", function(data) {
-			if (callback) {
-				callback(data);
-			}
-		}).fail(function(xhr, status, err) {
-			if (error) {
-				error(xhr.responseText, xhr.status);
-			}
-		});
-		
-		/*
-		// getJSON을 ajax로 적용한것 1
-		$.ajax({
-			type : 'get',
-			url : '/replies/pages/' + bno + '/' + page + '.json',
-			contentType : "application/json; charset=utf-8",
-			success : function(result, status, xhr) {
-				if (callback) {
-					callback(result);
-				}
-			},
-			error : function(xhr, status, err) {
-				if (error) {
-					error(xhr.responseText, xhr.status);
-				}
-			}
-		});
-		*/
-		
-		/*
-		// getJSON을 ajax로 적용한것 2
-		// ajax, getJSON 등은 return jqXHR
-		$.ajax({
-			type : 'get',
-			url : '/replies/pages/' + bno + '/' + page + '.json',
-			contentType : "application/json; charset=utf-8",
-		})
-		.done(function(data, status, xhr) {
-			if (callback) {
-				callback(data);
-			}
-		})
-		.fail(function(xhr, status, err) {
-			if (error) {
-				error(xhr.responseText, xhr.status);
-			}
-		});
-		*/
 	}
 	
 	// 댓글 목록 (댓글 숫자와 목록을 가져오는 경우)
-//	function getList(param, callback, error) {
-//
-//	    var bno = param.bno;
-//	    var page = param.page || 1;
-//	    
-//	    $.getJSON("/replies/pages/" + bno + "/" + page + ".json",
-//	    	function(data) {
-//	    		if (callback) {
-//	    			//callback(data); // 댓글 목록만 가져오는 경우 
-//	    			callback(data.replyCnt, data.list); //댓글 숫자와 목록을 가져오는 경우 
-//	    		}
-//	    	}).fail(function(xhr, status, err) {
-//	    		if (error) {
-//	    			error();
-//	    		}
-//	    	});
-//	}
+	function getList(param, callback, error) {
+
+	    var project_num = param.bnoValue;
+	    var page = param.page || 1;
+	    
+	    $.getJSON("/replies/pages/" + page + ".json",
+	    	function(data) {
+	    		if (callback) {    		
+	    			callback(data.replyCnt, data.list); //댓글 숫자와 목록을 가져오는 경우 
+	    		}
+	    		
+	    	}).fail(function(xhr, status, err) {
+	    		if (error) {
+	    			error();
+	    		}
+	    	});
+	}
 
 	// 댓글 삭제
 	/*
@@ -128,15 +69,15 @@ var replyService = (function() {
 	*/
 	
 	// 댓글 삭제. security 적용 후
-	function remove(rno, replyer, callback, error) {
+	function remove(ripple_num, userid, callback, error) {
 		  
 		console.log("--------------------------------------");  
-		console.log(JSON.stringify({rno:rno, replyer:replyer}));  
+		console.log(JSON.stringify({ripple_num:ripple_num, userid:userid}));  
 		    
 		$.ajax({
 			type : 'delete',
-			url : '/replies/' + rno,
-			data:  JSON.stringify({rno:rno, replyer:replyer}),
+			url : '/replies/' + ripple_num,
+			data:  JSON.stringify({ripple_num:ripple_num, userid:userid}),
 			contentType: "application/json; charset=utf-8",
 			success : function(deleteResult, status, xhr) {
 				if (callback) {
@@ -152,14 +93,14 @@ var replyService = (function() {
 	}
 
 	// 댓글 수정
-	function update(reply, callback, error) {
+	function update(content, callback, error) {
 
-		console.log("RNO: " + reply.rno);
+		console.log("ripple_num: " + content.ripple_num);
 
 		$.ajax({
 			type : 'put',
-			url : '/replies/' + reply.rno,
-			data : JSON.stringify(reply), // JavaScript 값이나 객체를 JSON 문자열로 변환
+			url : '/replies/' + content.ripple_num,
+			data : JSON.stringify(content), // JavaScript 값이나 객체를 JSON 문자열로 변환
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) {
 				if (callback) {
@@ -175,9 +116,9 @@ var replyService = (function() {
 	}
 	
 	// 댓글 조회
-	function get(rno, callback, error) {
+	function get(ripple_num, callback, error) {
 
-		$.get("/replies/" + rno + ".json", function(result) {
+		$.get("/replies/" + ripple_num + ".json", function(result) {
 			if (callback) {
 				callback(result);
 			}
@@ -226,5 +167,5 @@ var replyService = (function() {
 		displayTime : displayTime
 	};
 	
-	//return {name:"aaaa"}
+	return {name:"aaaa"}
 })();

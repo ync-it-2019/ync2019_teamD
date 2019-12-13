@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -26,179 +27,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		}
 	</script>
 	<!--//tags -->
-	<link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="resources/css/jin_style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="resources/css/font-awesome.css" rel="stylesheet">
+	<link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/resources/css/jin_style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/resources/css/font-awesome.css" rel="stylesheet">
 	<!-- //for bootstrap working -->
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<!-- header -->
-	<div class="header" id="home">
-		<div class="container">
-			<ul>
-				<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> 로그인 </a></li>
-				<li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
-				<li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-				<li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- //header -->
-	<!-- header-bot -->
-	<div class="header-bot">
-		<div class="header-bot_inner_wthreeinfo_header_mid">
-			<div class="col-md-4 header-middle">
-				<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
-					<div class="clearfix"></div>
-				</form>
-			</div>
-			<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="../"><span>G</span>oreNani <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-			<!-- header-bot -->
-			<div class="col-md-4 agileits-social top_content">
-				<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-					<li class="share">Share On : </li>
-					<li><a href="#" class="facebook">
-							<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="twitter">
-							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="instagram">
-							<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="pinterest">
-							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-						</a></li>
-				</ul>
-
-
-
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //header-bot -->
-	<!-- banner -->
-	<div class="ban-top">
-		<div class="container">
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
-								<li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-								<li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
-								<li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
-								<li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
-								<li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-			<div class="top_nav_right">
-				<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-					<form action="#" method="post" class="last">
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<!-- style.css w3view-cart 색상 변경 및 projectSubmitButton 클래스 생성 -->
-						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write'">
-							<h5 class="projectSubmitButton">Project 신청</h5>
-						</button>
-					</form>
-
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //banner-top -->
-	<!-- Modal1 -->
-	<div class="modal fade" id="myModal" tabhome="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="col-md-8 modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">로그인<span></span></h3>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="Email" required="">
-								<label>이메일 계정</label>
-								<span></span>
-							</div>
-							<div class="styled-input">
-								<input type="password" name="Password" required="">
-								<label>비밀번호</label>
-								<span></span>
-								<input type="checkbox" name="Remember" value="">
-								<font size="2em" color="black">아이디 저장</font>
-							</div>
-							<a href="#">
-								<input type="submit" value="로그인">
-							</a>
-						</form>
-						<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-															<li><a href="#" class="facebook">
-																	<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																	<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter">
-																	<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																	<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																	<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																	<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																	<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																	<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul> -->
-						<div class="styled-input">
-							<p>
-								<font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
-								<a href="join">
-									<font size="4em" color="black"><ins> 회원가입 </ins></font>
-								</a>
-							</p>
-						</div>
-					</div>
-					<div class="col-md-4 modal_body_right modal_body_right1">
-						<img src="resources/images/log_pic.jpg" alt=" " />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<!-- //Modal content-->
-		</div>
-	</div>
-	<!-- //Modal1 -->
-
+	 <%@include file="header.jsp"%>
 	<!-- /banner_bottom_agile_info -->
 	<div class="page-head_agile_info_w3l">
 		<div class="container">
@@ -249,41 +88,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="agile-contact-grids">
 				<div class="agile-contact-left">
+				<form role="form" action="/otoform" method="post" enctype="multiplart/form-data">
+								<input type="hidden" name = "attach" value="">
+  								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<table class="table-bordered">
 						<thead>
 							<h4 class="white-w3ls">문의 하기</h4>
 						</thead>
 						<tbody>
-							<form action="write_ok" method="post" encType="multiplart/form-data">
-								<tr>
-									<th>작성자: </th>
-									<td><input type="text" placeholder="작성자를 입력하세요. " name="subject" class="form-control" /></td>
+						        <tr>
+									<th>작성자</th>
+									<td><input class="form-control" name='userid'
+									     value='<sec:authentication property="principal.username"/>'
+									     readonly="readonly"></td>
 								</tr>
 								<tr>
-									<th>작성일: </th>
-									<td><input type="text" placeholder="작성일을 입력하세요. " name="date" class="form-control" /></td>
+									<th>제목</th>
+									<td><input type="text" placeholder="제목을 입력하세요. "
+										name="title" class="form-control"></td>
 								</tr>
 								<tr>
-									<th>내용: </th>
-									<td><textarea class="enquiry-form" cols="100" placeholder="악의적인 비난, 욕설을 삼가해주세요. " name="content" class="form-control"></textarea></td>
+									<th>내용</th>
+									<td><textarea class="enquiry-form" cols="126"
+											placeholder="내용을 작성하세요. " name="content" class="form-control"></textarea>
+									</td>
 								</tr>
-								<tr>
-									<th>비밀번호: </th>
-									<td><input type="password" placeholder="비밀번호를 입력하세요" class="form-control" /></td>
-								</tr>
-								<table frame=void>
+<!--   								<tr>
+									<th>첨부파일</th>
+									<td><input type="file" name="uploadFile"></td>
+								</tr> -->
 									<tr>
-										<td><input type="button" value="등록" onclick="sendData()" />
-											<input type="button" value="취소" onclick="location.href='onetoone'" /></td>
+										<td></td>
+										<td>
+										<input type="submit" id="submit2" value="등록">
+										<input type="button" value="취소" onclick="location.href='onetoone'"></td>
 									</tr>
-								</table>
-							</form>
+								
 						</tbody>
 					</table>
+					</form>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
+	</div>
 		<!--//contact-->
 		<!--/grids-->
 
@@ -321,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h4>Our <span>Information</span> </h4>
 							<ul>
 								<li><a href="../">Home</a></li>
-								<li><a href="total">한눈에보기</a></li>
+								
 								<li><a href="project">프로젝트</a></li>
 								<li><a href="open">오픈예정</a></li>
 								<li><a href="culture">문화콘텐츠</a></li>
@@ -453,10 +301,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //login -->
 		<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 		<!-- js -->
-		<script type="text/javascript" src="resources/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/resources/js/jquery-2.1.4.min.js"></script>
 		<!-- //js -->
 		<!-- cart-js -->
-		<script src="resources/js/minicart.min.js"></script>
+		<script src="/resources/js/minicart.min.js"></script>
 		<script>
 			// Mini Cart
 			paypal.minicart.render({
@@ -468,18 +316,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			}
 		</script>
 
-		<!-- //cart-js -->
-
-		<!-- stats -->
-		<script src="resources/js/jquery.waypoints.min.js"></script>
-		<script src="resources/js/jquery.countup.js"></script>
+		<script src="/resources/js/jquery.waypoints.min.js"></script>
+		<script src="/resources/js/jquery.countup.js"></script>
 		<script>
 			$('.counter').countUp();
 		</script>
 		<!-- //stats -->
 		<!-- start-smoth-scrolling -->
-		<script type="text/javascript" src="resources/js/move-top.js"></script>
-		<script type="text/javascript" src="resources/js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="/resources/js/move-top.js"></script>
+		<script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event) {
@@ -511,8 +356,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //here ends scrolling icon -->
 
 		<!-- for bootstrap working -->
-		<script type="text/javascript" src="resources/js/bootstrap.js"></script>
-		<script type="text/javascript" src="resources/js/bootstrap2.js"></script>
+		<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/resources/js/bootstrap2.js"></script>
 </body>
 
 </html>

@@ -29,7 +29,18 @@ import lombok.Data;
 	private String bank;
 	private String nickname;
 	private String auth;
+	private String title;
+	private long money;
+	private String dat;
+	
+	/* 어드민 멤버 전용 */
+	private String nowJob;
+	private String acc;
 	
 	private List<AuthVO> authList;
+	
+	private int id;
+	private int rownum;
+	private int su;
 
 }

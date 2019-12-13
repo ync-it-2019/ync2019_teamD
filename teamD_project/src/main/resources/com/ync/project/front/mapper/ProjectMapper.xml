@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ync.project.front.mapper.ProjectMapper"> <!-- 인터페이스와 이름동일 -->
-<!-- 10-31 임시로 Date부분 뺌 -->	
+<!-- 10-31 임시로 Date부분 뺌 12-03일getListWithPaging에 distinct추가 -->	
 		<!-- getListWithPaging에서 where에 include해서 이 코드 불러오기도 가능 -->
 	<sql id = "criteria">
-		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
 			<foreach item= 'type' collection = "typeArr">
 				<trim prefix="OR">
 					<choose>
@@ -15,7 +15,7 @@
 							category like '%' ||#{keyword}||'%'
 						</when>
 						<when test="type == 'W'.toString()">
-							company like '%' ||#{keyword}||'%'
+							userid like '%' ||#{keyword}||'%'
 						</when>
 					</choose>
 				</trim>
@@ -23,7 +23,7 @@
 		</trim>
 	</sql>
 	
-	
+	<!-- 페이징 메소드. p_type은 진행중 프로젝트 오픈예정 등을 나누기 위해 Criteria에 int로 만듬 1:진행중 2:종료된프로젝트 3: 4: -->
 	<select id="getListWithPaging" resultType="com.ync.project.domain.ProjectVO">
 		<![CDATA[
 		SELECT project_num,
@@ -33,7 +33,9 @@
 			   company,
 			   current_invest,
 			   achive_invest,
-			   project_end
+			   project_start,
+			   project_end,
+			   project_distinct
 	    FROM (
 	    	  SELECT /*+INDEX_DESC(teamd_project xpkteamd_project) */
 	    	   rownum rn,
@@ -44,62 +46,76 @@
 			   company,
 			   current_invest,
 			   achive_invest,
-			   project_end
+			   project_start,
+			   project_end,
+			   project_distinct
 	    	  FROM teamd_project
-	    	  WHERE
+	    	  WHERE rownum <= #{pageNum} * #{amount}
 		]]>
 		<include refid = "criteria"></include>
+            <choose>
+                <when test="p_type == 'ongoing'.toString()">
+                   	<![CDATA[
+              			AND   project_distinct = 'ongoing' AND ((project_start <= sysdate AND project_end > sysdate) AND category NOT IN('모임','공연/컬쳐','소셜/캠페인','게임/취미','출판'))
+            	   	]]>
+                </when>
+                <when test="p_type == 'end'.toString()">
+                	<![CDATA[
+                    	AND  (project_distinct = 'ongoing' AND project_end < sysdate)
+                	]]>
+                </when>
+                <when test="p_type == 'open'.toString()">
+             		<![CDATA[
+              			AND (project_distinct = 'ongoing' AND project_start > sysdate)
+             		]]>
+           		</when>
+           		<when test="p_type == 'culture'.toString()">
+             		<![CDATA[
+              			AND ((project_distinct = 'ongoing' AND (project_start <= sysdate AND project_end > sysdate)) AND category IN('모임','공연/컬쳐','소셜/캠페인','게임/취미','출판'))
+             		]]>
+           		</when>
+            </choose>
+		)
 		<![CDATA[
-			rownum <= #{pageNum} * #{amount}
-			)
-		WHERE rn > (#{pageNum} -1) * #{amount}
-				
-		]]>
-	</select>
-	
-		<!-- 11월 04일 추가 카테고리 버튼 이벤트 -->
-		<select id="getListWithPagingCategory" resultType="com.ync.project.domain.ProjectVO">
-		<![CDATA[
-		SELECT project_num,
-			   category,
-			   title_image,
-			   simple_content,
-			   company,
-			   current_invest,
-			   achive_invest,
-			   project_end
-	    FROM (
-	    	  SELECT /*+INDEX_DESC(teamd_project xpkteamd_project) */
-	    	   rownum rn,
-	    	   project_num,
-			   category,
-			   title_image,
-			   simple_content,
-			   company,
-			   current_invest,
-			   achive_invest,
-			   project_end
-	    	  FROM teamd_project
-	    	  WHERE
-		]]>
-		<include refid = "criteria"></include>
-		<![CDATA[
-			rownum <= #{pageNum} * #{amount}
-			AND CATEGORY = '#{category}'
-			)
 		WHERE rn > (#{pageNum} -1) * #{amount}
 		]]>
 	</select>
-	
 	
 	<select id="getList" resultType="com.ync.project.domain.ProjectVO">
-	<![CDATA[
-		SELECT * FROM teamd_project WHERE project_num > 0
-		]]>
+		<![CDATA[
+			SELECT * 
+			FROM    ]]>
+				(SELECT ROW_NUMBER() OVER (ORDER BY
+				<if test="p_type != '0'.toString()">current_invest </if>
+				<if test="p_type == '0'.toString()">project_start </if> 
+				 DESC) rownums,tp.*
+				 FROM teamd_project tp
+			<![CDATA[
+				 WHERE 	project_distinct = 'ongoing' AND (project_start <= sysdate AND project_end > sysdate)) t
+			WHERE t.rownums <= 5
+			]]>
+			<if test="p_type == 'culture'.toString()">
+				AND category IN('모임','공연/컬쳐','소셜/캠페인','게임/취미','출판')  
+			</if>
 	</select>
 	
+	<select id="home_slide" resultType="com.ync.project.domain.ProjectVO">
+		<![CDATA[
+			SELECT  rownum, 
+					a.project_num, 
+					a.title_image
+			FROM
+				(
+				   SELECT 	project_num, 
+				   			title_image
+				   FROM   	teamd_project
+				   WHERE   (project_distinct = 'ongoing' AND (project_start <= sysdate AND project_end > sysdate))
+				   ORDER BY DBMS_RANDOM.random()
+				) a
+			WHERE rownum <= 5
+			]]>
+	</select>
 
-	
 	<insert id="insert">
 		INSERT INTO teamd_project(project_num,
 						  category,
@@ -115,14 +131,15 @@
 						  attach_3,
 						  company,
 						  contents_image1,
-						  contents_image2)
+						  contents_image2,
+						  project_distinct)
 		VALUES (teamd_seq_project.nextval,
 		        #{category}, 
 		        #{title_image},
 		        #{simple_content}, 
 		        #{detail_content},
 		        #{phone}, 
-		        'user',
+		        #{userid},
 		        #{current_invest},
 		        #{achive_invest},
 		        #{attach_1},
@@ -130,8 +147,11 @@
 		        #{attach_3},
 		        #{company},
 		        #{contents_image1},
-		        #{contents_image2})
+		        #{contents_image2},
+		        'standBy')
 	</insert>
+	
+	
 	
 	<insert id="insertSelectKey"><!-- 몇번째 게시물입니다 이런거 띄울려고 하는거. 필요없음 -->
 
@@ -156,7 +176,8 @@
 						  contents_image2,
 						  attach_2,
 						  attach_3,
-						  detail_content  
+						  detail_content,
+						  project_distinct  
 						  )
 		VALUES (#{project_num},
 		        #{category}, 
@@ -167,27 +188,48 @@
 		        #{attach_1},
 		        #{project_start},
 		        #{project_end},
-		   		'user',
-		   		'서영',
+		   		#{userid},
+		   		#{company},
 		   		#{contents_image1},
 		        #{contents_image2},
 		        #{attach_2},
 		        #{attach_3},
-		        #{detail_content}
+		        #{detail_content},
+		        'standBy'
 		        )
 	</insert>
 	
 	
 	<!-- select -->
 	<select id="read" resultType = "com.ync.project.domain.ProjectVO">
-		SELECT * FROM teamd_project where project_num = #{project_num}
+		SELECT 	p.*,
+				t.address,
+				t.profile_image,
+				t.self_introduce
+		FROM 	teamd_project p,
+				(SELECT m.address,
+						m.profile_image,
+						m.userid,
+						m.self_introduce
+				 FROM	teamd_member m,
+				 		teamd_project p2
+				 WHERE  p2.userid = m.userid
+				 AND	p2.project_num = #{project_num}) t
+		WHERE 	p.project_num = #{project_num}
+		AND		p.userid = t.userid
 	</select>
+
 	
 	
 	<!-- delete -->
 	<delete id="delete">
 		delete from teamd_project where project_num = #{project_num}
-		
+	</delete>
+	
+	<!-- 12-03일 삭제를 위한 프로젝트 구분 변경 xml-->
+	<delete id="state_change">
+		UPDATE teamd_project SET project_distinct = 'remove_standBy'
+		where project_num = #{project_num}
 	</delete>
 	
 		<!-- update -->
@@ -208,13 +250,71 @@
 							  	 WHERE project_num = #{project_num}
 	</update>
 	
-	
+	<!-- 12월 03일 count수 맞추기 위해서 AND project_distinct = #{p_distinct}추가 -->
 	<select id="getTotalCount" resultType="int">
+	<![CDATA[
 		SELECT count(*) 
 		FROM teamd_project
 		WHERE project_num > 0
+		]]>
 	</select>
 	
+	<select id="project_getTotalCount" resultType="int">
+	<![CDATA[
+		SELECT count(*) 
+		FROM teamd_project
+		WHERE project_num > 0
+		
+		]]>
+		<include refid = "criteria"></include>
+       	<choose>
+           <when test="p_type == 'ongoing'.toString()">
+            <![CDATA[
+              AND   project_distinct = 'ongoing' AND ((project_start <= sysdate AND project_end > sysdate) AND category NOT IN('모임','공연/컬쳐','소셜/캠페인','게임/취미','출판'))
+            ]]>
+           </when>
+           <when test="p_type == 'end'.toString()">
+             <![CDATA[
+              AND  project_distinct = 'ongoing' AND (project_end < sysdate)
+              ]]>
+           </when>
+           <when test="p_type == 'open'.toString()">
+             <![CDATA[
+              AND  project_distinct = 'ongoing' AND (project_start > sysdate)
+              ]]>
+           </when>
+           <when test="p_type == 'culture'.toString()">
+             <![CDATA[
+              	AND ((project_distinct = 'ongoing' AND (project_start <= sysdate AND project_end > sysdate)) AND category IN('모임','공연/컬쳐','소셜/캠페인','게임/취미','출판'))
+             ]]>
+           </when>
+        </choose>
+		
+	</select>
 	
+	<select id="getHomeOpenProject" resultType="com.ync.project.domain.ProjectVO">
+	<![CDATA[
+		SELECT	P.project_num, 
+				P.title_image, 
+				P.simple_content, 
+				P.project_start, 
+				P.project_end
+		FROM	
+		(
+			SELECT  TO_CHAR(PROJECT_START,'YYYY') startYear, 
+					PROJECT_NUM, 
+					TITLE_IMAGE, 
+					SIMPLE_CONTENT, 
+					PROJECT_START, 
+					PROJECT_END
+			FROM   TEAMD_PROJECT
+			WHERE   PROJECT_DISTINCT = 'ongoing'
+			AND      PROJECT_START > SYSDATE
+			ORDER BY DBMS_RANDOM.random()
+		)	P
+		WHERE	P.startYear = EXTRACT(YEAR FROM SYSDATE)
+		AND		ROWNUM < 5
+	]]>
+	</select>
 	
 </mapper>

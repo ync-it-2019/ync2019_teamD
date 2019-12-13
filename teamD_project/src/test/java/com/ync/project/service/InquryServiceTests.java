@@ -27,7 +27,7 @@ public class InquryServiceTests {
    
 //   @Test
 //   public void testGet() {
-//      log.info(service.get(24L));   
+//      log.info(service.get(83L));   
 //   }
    
 //   @Test
@@ -38,26 +38,31 @@ public class InquryServiceTests {
 //   @Test
 //   public void testRegister() {
 //      InquryVO inqury = new InquryVO();
-//      inqury.setTitle("문의제목");
+//      inqury.setTitle("페이징 잘됐으면");
 //      inqury.setReg_date(null);
-//      inqury.setAttach("문의첨부파일");
-//      inqury.setUserid("user");
-//      inqury.setContent("문의내용");
+//      inqury.setAttach("1.jpg");
+//      inqury.setUserid("tester");
+//      inqury.setContent("페이지 번호 페이지 번호 페이지 번호");
 //      
 //      service.register(inqury);   
 //      log.info("생성된 게시물의 번호 : " + inqury.getInqury_num());
 //   }
    
-   @Test
-   public void testUpdate() {
-      InquryVO inqury = service.get(72L);
-      if (inqury == null) {
-         return;
-      }
-      inqury.setRipple_date(null);
-      inqury.setRipple_content("문의답변");
-      inqury.setRipple_check("Y");
-      log.info("UPDATE RESULT: " + service.update(inqury));
-   }
+//   @Test
+//   public void testUpdate() {
+//      InquryVO inqury = service.get(111L);
+//      if (inqury == null) {
+//         return;
+//      }
+//      inqury.setRipple_date(null);
+//      inqury.setRipple_content("화면에서 게시물을 수정한 후에 버튼을 통해서 수정을 요청합니다.");
+//      inqury.setRipple_check("Y");
+//      log.info("UPDATE RESULT: " + service.update(inqury));
+//   }
+   
+//	@Test
+//	public void testDelete() {
+//		log.info("REMOVE RESULT: " + service.remove(32L));
+//	}
    
 }

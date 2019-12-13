@@ -50,11 +50,11 @@
 						<h3 class="panel-title">Logout Page</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form" method='post' action="/customLogout">
+						<form role="form" method='post' action="/logout">
 							<fieldset>
 								
 								<!-- Change this to a button or input when using this as a form -->
-								<a href="index.html" class="btn btn-lg btn-success btn-block">Logout</a>
+								<input type="submit" value="Logout">
 							</fieldset>
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
@@ -87,6 +87,13 @@
 	});
 	
 	</script>
+	<c:if test="{param.logout != null">
+		<script>
+			$(document).ready(function(){
+				alert("로그아웃함!")
+			});
+		</script>
+	</c:if>
 
 </body>
 

@@ -1,6 +1,9 @@
 package com.ync.project.domain;
 
+import java.util.Date;
 import java.util.List;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 	
@@ -14,12 +17,19 @@ import lombok.Data;
 	@Data
 	public class InvestorVO {
 	
-	private String investor_num;
-	private String project_num;
-	private String amount;
-	private String score;
+	private int investor_num;
+	private int project_num;
+	private int amount;
+	private int score;
 	private String job;
 	private String userid; 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date invest_date;
+	private String simple_content;
+	
+	//Member테이블과 조인을 위한 변수
+	private String nickname;
+	private String profile_image;
 	
 	private List<AuthVO> authList;
 

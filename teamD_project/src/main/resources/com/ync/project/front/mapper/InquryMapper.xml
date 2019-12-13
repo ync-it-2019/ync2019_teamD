@@ -15,7 +15,6 @@
       </collection> 
    </resultMap>
    
-   
      <sql id = "criteria">
 		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 			<foreach item= 'type' collection = "typeArr">
@@ -40,15 +39,17 @@
 		<![CDATA[
 		SELECT inqury_num,
 			   title,
-			   content,
-			   userid
+			   userid,
+			   reg_date,
+			   ripple_check
 	    FROM (
 	    	  SELECT /*+INDEX_DESC(teamd_inqury xpkteamd_inqury) */
 	    	   rownum rn,
 	    	   inqury_num,
 			   title,
-			   content,
-			   userid
+			   userid,
+			   reg_date,
+			   ripple_check
 	    	  FROM teamd_inqury
 	    	  WHERE
 		]]>
@@ -60,7 +61,6 @@
 		]]>
 	</select>
    
-	
      <select id="getList" resultType="com.ync.project.domain.InquryVO">
 	<![CDATA[
 		SELECT * FROM teamd_inqury WHERE inqury_num > 0
@@ -76,33 +76,38 @@
 		
 		INSERT INTO teamd_inqury(
 		                         inqury_num,
-		                         title,
-		                         attach,
 		                         userid,
+		                         title,
 						         content)
-		VALUES (teamd_seq_inqury.nextval,
-		        #{title},
-		        #{attach},
+		VALUES (#{inqury_num},
 		        #{userid},
+		        #{title},
 		        #{content})
 	</insert>
-	
-
 	
 	<update id="update">
 		UPDATE teamd_inqury 
 		SET    inqury_num = #{inqury_num},
 		       ripple_content = #{ripple_content},
+		       ripple_date = sysdate,
 		       ripple_check = #{ripple_check}
 		WHERE  inqury_num = #{inqury_num}
 	</update>
 	
 	<delete id="delete">
-		delete from teamd_inqury where inqury_num = #{inqury_num}
+		DELETE FROM teamd_inqury WHERE inqury_num = #{inqury_num}
 	</delete>
 	
+	<update id="InquryDeleting">
+		 	DELETE	
+			FROM	teamd_inqury
+			WHERE	inqury_num = #{inqury_num}
+	</update>
+	
 	<select id="read" resultType = "com.ync.project.domain.InquryVO">
-		SELECT * FROM teamd_inqury where inqury_num = #{inqury_num}
+		SELECT * 
+		FROM   teamd_inqury 
+		WHERE  inqury_num = #{inqury_num}
 	</select>
 	
 	<select id="getTotalCount" resultType="int">

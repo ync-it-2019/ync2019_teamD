@@ -1,6 +1,25 @@
 /*새로 추가한 코드--------------------------------------------*/
-
-
+#blurBanner{
+background-size:cover;
+position: relative;
+z-index:1;
+overflow:hidden;
+}
+.bgBlur:before {
+  content: '';
+  position: absolute;
+  top: 0; left:0; right:0; bottom:0;
+  background: inherit;
+  width:100%;
+  height:300px;
+  z-index:-1;
+  filter: blur(5px); 
+  -webkit-filter: blur(6px); 
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: url(#blur);
+}
 
 .btn-danger2 {
   color: #fff;
@@ -20,11 +39,26 @@
   float:left;
 }
 
-/* .col-md-4-1{ */
-  /* position: relative */
-  /* width:960px; margin: 0 auto;
-  overflow: hidden; */
-/* } */
+.col-md-4-1-1{ /*div class들 조절 12-08*/
+  position: relative;
+  width: 70%;
+  height: 65px;
+  float:left;
+}
+
+.col-md-new{ /*div class들 조절 12-08*/
+  position: relative;
+  width: 30.33%;
+  margin: 0 0 10px 10px;
+  float: left;
+}
+.col-md-8-1-1{  /*12-08*/
+  position: relative;
+  float:right;
+  width: 30%;
+  height: 65px;
+
+}
 
 
 .col-md-8-1{  /*제목같은거 이미지 옆으로 붙이기 위해서 추가*/
@@ -34,6 +68,17 @@
   height: 20%;
 
 }
+
+.col-md-8-2{  /*12-08*/
+  position: relative;
+  width: 100%;
+  height: 20%;
+
+}
+.img-positions{
+  float:right;
+}
+
 .media {
   display: -ms-flexbox;
   display: flex;

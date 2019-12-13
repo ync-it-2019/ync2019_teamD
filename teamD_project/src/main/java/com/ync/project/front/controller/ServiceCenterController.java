@@ -23,22 +23,6 @@ public class ServiceCenterController {
 	  * @return call jsp view
 	  */
 	
-	@GetMapping(value = "/onetoone")
-	public String onetoone() {
-
-		log.info("Welcome onetoone!");
-	
-		return "front/onetoone";
-	}
-	
-	@GetMapping(value = "/otoform")
-	public String otoform() {
-
-		log.info("Welcome otoform!");
-	
-		return "front/otoform";
-	}
-	
 	@GetMapping(value = "/fqa")
 	public String fqa() {
 

@@ -11,9 +11,9 @@ import lombok.Data;
 /**
  * 
   * @FileName	: ProjectVO.java
-  * @Date		: 2019. 10. 21. 
+  * @Date		: 2019. 12. 03. 
   * @Author		: 이지원
-  * @프로그램 설명 : 프로젝트 작성 VO
+  * @프로그램 설명 : 프로젝트 작성 VO project_distinct추가
  */
 
 @Data
@@ -41,5 +41,21 @@ public class ProjectVO {
 	private String attach_3;
 	
 	private Date project_record;
-//	private char project_check;
+	private String project_distinct;
+	
+	private int su;
+	
+	//싱글페이지 멤버와 조인 용
+	private String address;
+	private String profile_image;
+	private String self_introduce;
+	
+	// 어드민 용
+	private int achive;
+	
+	private int countProject;
+	private int countUser;
+	private int rownum;
+	private int cnt;
+	private int inv;
 }

@@ -38,49 +38,96 @@
 	SELECT	userid,
 			userpw,
 			name,
-			nickname,
-			phone,
-			address,
-			job,
-			bank,
-			account,
-			profile_image,
-			interesting_category,
-			self_introduce,
 			auth
 	FROM	teamd_member
 	WHERE	userid = #{userid} 
 	</select>
+	
+	<select id="member_total" resultType="int">
+			SELECT count(*) 
+			FROM  teamd_member
+	</select>
+	
+	
+	<resultMap type="com.ync.project.domain.MemberVO" id="mypageMap">
+		<id property="userid" column="userid"/>
+		<result property="nickname" column="nickname"/>
+		<result property="profile_image" column="profile_image"/>
+		<result property="account" column="account"/>
+	</resultMap>
+	
+	<select id="myPage" resultMap="mypageMap">
+		SELECT	userid,
+				nickname,
+				profile_image,
+				account,
+				job
+		FROM	teamd_member
+		WHERE	userid = #{userid}
+	</select>
 
 	<!-- 회원가입 -->
 	<insert id="insert">
-		INSERT	INTO	teamd_member(   userid,
-										userpw,
-										phone,
-										address,
-										job,
-										name,
-										nickname,
-										auth
-									)
-		VALUES			(   #{userid},
-							#{userpw},
-							#{phone},
-							#{address},
-							#{job},
-							#{name},
-							#{nickname},
-							'user'
-						)
+	INSERT INTO	teamd_member(  	userid,
+								userpw,
+								job,
+								phone,
+								address,
+								name,
+								nickname,
+								auth
+							) 
+		VALUES	(   #{userid},
+					#{userpw},
+					#{job},
+					#{phone},
+					#{address},
+					#{name},
+					#{nickname},
+					'ROLE_USER'
+	)
 	</insert>
+	
+	<update id="signupInvest">
+		 UPDATE	 teamd_member 
+		 SET	 bank = #{bank},
+				 account = #{account}
+		 WHERE	 userid = #{userid} 
+	</update>
 	
 	<!-- 프로필 업데이트 -->
 	<update id="update">
-		UPDATE 	teamd_member
+		UPDATE 	teamd_member 
 		SET		profile_image = #{profile_image},
 				interesting_category = #{interesting_category},
-				self_introduce = #{self_introduce}
-		WHERE	userid = #{userid}
+				self_introduce = #{self_introduce} 
+		WHERE	userid = #{userid} 
 	</update>
+	
+	<!-- 마이페이지 프로젝트. 진행 중 -->
+	<select id="myPageProject" resultType="com.ync.project.domain.ProjectVO">
+	<![CDATA[
+	SELECT	simple_content, 
+			project_start, 
+			project_end, 
+			project_distinct
+	FROM	teamd_project 
+	WHERE	userid = #{userid} 
+	AND		project_end > SYSDATE
+	]]>
+	</select>
+	
+	<!-- 마이페이지 프로젝트. 종료 됨 -->
+	<select id="myPageProjectEnd" resultType="com.ync.project.domain.ProjectVO">
+	<![CDATA[
+	SELECT	simple_content, 
+			project_start, 
+			project_end, 
+			project_distinct
+	FROM	teamd_project 
+	WHERE	userid = #{userid} 
+	AND		project_end < SYSDATE
+	]]>
+	</select>
 
 </mapper>

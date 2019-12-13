@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ync.project.domain.Criteria;
 import com.ync.project.domain.InquryVO;
 import com.ync.project.front.mapper.InquryMapper;
 
@@ -43,10 +44,10 @@ public class InquryServicelmpl implements InquryService {
 	}
 	
 	@Override
-	public boolean remove(Long ino) {
+	public void InquryDeleting(long inqury_num) {
+		log.info("inqury delete Standby......");
 		
-		log.info("remove......." + ino);
-		return mapper.delete(ino) == 1;	
+		mapper.InquryDeleting(inqury_num);
 	}
 
 	@Override
@@ -63,6 +64,18 @@ public class InquryServicelmpl implements InquryService {
 		log.info("update......." + inqury);
 
 		return mapper.update(inqury) == 1;
+	}
+
+	@Override
+	public List<InquryVO> getListWithPaging(Criteria cri) {
+		log.info("get List with criteria: " + cri);
+		return mapper.getListWithPaging(cri);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
 	}
 
 }

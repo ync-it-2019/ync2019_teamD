@@ -24,6 +24,7 @@ public class InquryVO {
 	private Date ripple_date;
 	private String content;
 	private String ripple_content;
-	private String ripple_check;
-	
-}
+    private String ripple_check;
+    
+	}
+

@@ -25,9 +25,11 @@ public interface InquryMapper {
 	public int update(InquryVO inqury);
 	
 	public Integer insertSelectKey(InquryVO inqury);
-
-	public int getTotalCount(Criteria cri);
 	
 	public int delete(Long ino);
+
+	public int getTotalCount(Criteria cri);
+
+	public void InquryDeleting(long inqury_num);
 	
 }
