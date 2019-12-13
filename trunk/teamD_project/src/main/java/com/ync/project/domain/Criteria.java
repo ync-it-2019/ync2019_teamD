@@ -6,6 +6,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+
+/**
+ * 
+  * @FileName	: Criteria.java
+  * @Date		: 2019. 12. 3. 
+  * @Author		: 이지원
+  * @프로그램 설명 : 페이징을 위한 클래스. 12월3일에 private String p_distinct;추가
+ */
 @Getter
 @Setter
 @ToString
@@ -16,6 +24,10 @@ public class Criteria {
 	
 	private String keyword;
 	private String type;
+	
+	private String p_distinct;
+	private String p_type;
+	private String p_category;
 	
 	public Criteria() {
 		this(1,9);
@@ -36,7 +48,8 @@ public class Criteria {
 				.queryParam("pageNum", this.pageNum)
 				.queryParam("amount", this.getAmount())
 				.queryParam("type", this.getType())
-				.queryParam("keyword", this.getKeyword());
+				.queryParam("keyword", this.getKeyword())
+				.queryParam("p_distinct", this.getP_distinct());
 		
 		return builder.toUriString();
 	}

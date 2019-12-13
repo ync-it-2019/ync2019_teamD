@@ -4,70 +4,76 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.ync.project.domain.Criteria;
+import com.ync.project.domain.RipplePageDTO;
 import com.ync.project.domain.RippleVO;
+import com.ync.project.domain.Criteria;
 import com.ync.project.front.mapper.RippleMapper;
 
+
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
-/**
- * 
-  * @FileName	: RippleMapper.java
-  * @Date		: 2019. 10. 23. 
-  * @Author		: 이준혁
-  * @프로그램 설명 : 댓글service 작성
- */
-
-@Log4j
-@Service
-public class RippleServiceImpl implements RippleService {
-
-	@Autowired
-	private RippleMapper mapper;
-
-	@Override
-	public int register(RippleVO ripple) {
+	@Service
+	@Log4j
+	//@AllArgsConstructor
+	public class RippleServiceImpl implements RippleService{
 		
-		log.info("register......." + ripple);
-
-		return mapper.insert(ripple);
-	}
-
-	@Override
-	public RippleVO get(Long ripple_num) {
-
-		log.info("get......." + ripple_num);
-
-		return mapper.read(ripple_num);
-	}
-
-	@Override
-	public List<RippleVO> getList() {
-
-		log.info("getList.......");
-
-		return mapper.getList();
-	}
-
-	@Override
-	public boolean modify(RippleVO content) {
-		log.info("modify......." + content);
-		return mapper.update(content) == 1;
-	}
-	
-	@Override
-	public boolean remove(Long ripple_num) {
-		log.info("remove......." + ripple_num);
-		return mapper.delete(ripple_num) == 1;
-	}
-
-	@Override
-	public List<RippleVO> getListWithPaging(Criteria cri, Long bno) {
+		@Setter(onMethod_ = @Autowired)
+		private RippleMapper mapper;
 		
-		log.info("get Ripple List of a Board " + bno);
-		return mapper.getListWithPaging(cri, bno);
+		
+		@Override
+		public void register(RippleVO vo) {
+			
+			log.info("register......" + vo);
+		
+			
+			mapper.insert(vo);
+			
+		}
+		
+		@Override
+		public RippleVO get(String userid) {
+			
+			log.info("get...." + userid);
+			
+			return mapper.read(userid);
+		}
+		
+		@Override
+		public int modify(RippleVO vo) {
+			
+			log.info("modify......" + vo);
+			
+			return mapper.update(vo);
+			
+		}
+		
+		
+		@Override
+		public int remove(Long ripple_num) {
+			
+			log.info("remove...." + ripple_num);
+			
+			return mapper.remove(ripple_num);
+		}
+		
+		@Override
+		public List<RippleVO> getList(Long project_num) {
+			
+			log.info("get Reply List of ad Board" + project_num);
+			
+			return mapper.getList(project_num);
+		}
+
+		@Override
+		public RipplePageDTO getListPage(Criteria cri, Long project_num) {
+			// TODO Auto-generated method stub
+			return new RipplePageDTO(
+					mapper.getCountByBno(project_num),
+					mapper.getListWithPaging(cri, project_num));
+		}
 		
 	}
-
-}

@@ -32,31 +32,31 @@ public class MemberServiceTests {
 		
 	}
 	
+	/*
+	 * @Test public void testRegist() { MemberVO member = new MemberVO();
+	 * member.setUserid("erty"); member.setUserpw("erty"); member.setName("erty");
+	 * member.setPhone("erty"); member.setNickname("erty"); member.setJob("erty");
+	 * member.setAddress("erty"); service.regist(member); log.info("회원등록......."); }
+	 */
+	
 	@Test
-	public void testInsert() {
-		MemberVO member = new MemberVO();
-		member.setUserid("abc18");
-		member.setUserpw("abc10");
-		member.setName("이초코");
-		member.setPhone("01044445555");
-		member.setNickname("choco");
-		member.setJob("요리사");
-		member.setAddress("한방통닭");
-		member.setAuth("TEST");
-		service.register(member);
-		log.info("회원등록.......");	
-	}
-
-	@Test
-	public void testUpdate() {
+	public void testRegistInvestor() {
 		MemberVO member = service.get("abc18");
 		if (member == null) {
 			return;
 		} 
-		member.setProfile_image("20191030.jpg");
-		member.setInteresting_category("애니메이션");
-		member.setSelf_introduce("HelloWorld!");
-		log.info("UPDATE RESULT: " + service.update(member));
+		
+		member.setBank("이공은행");
+		member.setAccount("295");
+		
 	}
+
+	/*
+	 * @Test public void testUpdate() { MemberVO member = service.get("abc18"); if
+	 * (member == null) { return; } member.setProfile_image("20191030.jpg");
+	 * member.setInteresting_category("애니메이션");
+	 * member.setSelf_introduce("HelloWorld!"); log.info("UPDATE RESULT: " +
+	 * service.update(member)); }
+	 */
 
 }

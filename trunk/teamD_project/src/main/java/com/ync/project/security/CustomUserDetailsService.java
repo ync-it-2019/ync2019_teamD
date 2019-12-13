@@ -20,15 +20,15 @@ import lombok.extern.log4j.Log4j;
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired
-	private MemberMapper memberMapper;
+	private MemberMapper member;
 
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String userid) throws UsernameNotFoundException {
 
-		log.warn("Load User By UserName : " + userName);
+		log.warn("Load User By UserName : " + userid);
 
 		// userName means userid
-		MemberVO vo = memberMapper.read(userName);
+		MemberVO vo = member.read(userid);
 
 		log.warn("queried by member mapper: " + vo);
 

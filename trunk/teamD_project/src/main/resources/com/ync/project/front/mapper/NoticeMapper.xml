@@ -51,13 +51,8 @@
 	    	  	reg_date,
 	    	  	attach
 	    	  FROM teamd_notice
-	    	  WHERE
-		]]>
-		<include refid = "criteria"></include>
-		<![CDATA[
-			rownum <= #{pageNum} * #{amount}
-			)
-		WHERE rn > (#{pageNum} -1) * #{amount}
+	    	  WHERE rownum <= 30 )
+		WHERE rn > 1
 		]]>
 	</select>
 	 

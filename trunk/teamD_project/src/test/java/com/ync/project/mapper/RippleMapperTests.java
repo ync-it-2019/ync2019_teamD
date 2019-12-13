@@ -15,6 +15,7 @@ import com.ync.project.domain.Criteria;
 import com.ync.project.domain.RippleVO;
 import com.ync.project.front.mapper.RippleMapper;
 
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -23,55 +24,61 @@ import lombok.extern.log4j.Log4j;
 // @ContextConfiguration(classes = {org.zerock.config.RootConfig.class} )
 @Log4j
 public class RippleMapperTests {
-//	@Setter(onMethod_ = @Autowired)
-	@Autowired //이렇게 명시적으로 하는 경우가 많음. 자바표준 어노테이션은 @Inject
+
+	private Long[] project_numArr = {116L,115L,114L,113L};
+	
+	@Setter(onMethod_ = @Autowired)
 	private RippleMapper mapper;
 	
-	private Long[] ProjectNumArr = {4L, 7L, 9L, 11L};
+//	@Test
+//	public void testMapper() {
+//		log.info(mapper);
+//	}
 	
-	@Test
-	public void testMapper() {
-		log.info(mapper);
-	}
-	
-//	//댓글작성
+	//댓글작성
 //	@Test
 //	public void testCreate() {
 //		
 //		
-//		IntStream.rangeClosed(1, 10).forEach(i -> {
+//		IntStream.rangeClosed(1, 4).forEach(i -> {
 //			
 //			RippleVO vo = new RippleVO();
 //			
 //			//게시물의 번호
-//			vo.setProject_num(ProjectNumArr[i % 4]);
-//			vo.setContent("댓글 테스트 " + i);
-//			vo.setUserid("test");
+//			vo.setProject_num(project_numArr[i-1]);
+//			vo.setContent("댓글test" + i);
+//			vo.setUserid("tester");
 //			
 //			mapper.insert(vo);
 //		});
 //	}
 //	
+//	@Test
+//	public void testMapper() {
+//		log.info(mapper);
+//	}
+
+	
 //	//조회(read)
 //	@Test
 //	public void testRead() {
 //		
-//		long targetRno = 5L;
+//		long targetRno = 1L;
 //		
 //		RippleVO vo = mapper.read(targetRno);
 //		
 //		log.info(vo);
 //	}
 	
-//	//delet 삭제
+	//delete 삭제
 //	@Test
 //	public void testDelete() {
-//		Long targetRno = 4L;
+//		Long targetRno = 8L;
 //		
 //		mapper.delete(targetRno);
 //	}
 	
-	//수정 update
+//수정 update
 //	@Test
 //	public void testUpdate() {
 //		

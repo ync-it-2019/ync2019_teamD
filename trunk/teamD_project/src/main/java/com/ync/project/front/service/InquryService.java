@@ -2,6 +2,7 @@ package com.ync.project.front.service;
 
 import java.util.List;
 
+import com.ync.project.domain.Criteria;
 import com.ync.project.domain.InquryVO;
 
 /**
@@ -19,12 +20,16 @@ public interface InquryService {
 	public boolean update(InquryVO inqury);
 
 	// 문의삭제
-	public boolean remove(Long ino);
+	public void InquryDeleting(long inqury_num);
 
 	// 글 상세보기
 	public InquryVO get(Long ino);
 
 	// 전체 글 목록
 	public List<InquryVO> getList();
+
+	public List<InquryVO> getListWithPaging(Criteria cri);
+
+	public int getTotal(Criteria cri);
 
 }

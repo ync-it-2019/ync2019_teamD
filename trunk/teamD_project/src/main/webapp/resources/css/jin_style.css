@@ -219,6 +219,7 @@ th, td
 .table-bordered th {
 		color: #2fdab8;
 		background-color: #000;
+		width: 20%;
 }
 .top-content th{
 		color: #2fdab8;

@@ -31,123 +31,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<style type="text/css">
 		}
 	</style>
+	
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 </head>
 
 <body>
-	<!-- 헤더(위에 검은거) -->
-	<div class="header" id="home">
-		<div class="container">
-			<ul>
-				<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> 로그인 </a></li>
-        <li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
-        <li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-        <li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- //header -->
-
-	<!-- //banner-top -->
-	<!-- Modal1 -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="col-md-8 modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">로그인<span></span></h3>
-						<form action="#" method="post">
-									<div class="styled-input agile-styled-input-top">
-										<input type="text" name="Email" required="">
-										<label>이메일 계정</label>
-										<span></span>
-							</div>
-							<div class="styled-input">
-								<input type="password" name="Password" required="">
-								<label>비밀번호</label>
-								<span></span>
-								<input type="checkbox" name="Remember" value="">
-								<font size="2em" color="black">아이디 저장</font>
-							</div>
-							<a href="#">
-								<input type="submit" value="로그인">
-							</a>
-						</form>
-						<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter">
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul> -->
-						<div class="styled-input">
-							<p>
-								<font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
-								<a href="join">
-									<font size="4em" color="black"><ins> 회원가입 </ins></font>
-								</a>
-							</p>
-						</div>
-					</div>
-					<div class="col-md-4 modal_body_right modal_body_right1">
-						<img src="/resources/images/log_pic.jpg" alt=" " />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<!-- //Modal content-->
-		</div>
-	</div>
-	<!-- //Modal1 -->
-
-	<div class="header-bot">
-		<div class="header-bot_inner_wthreeinfo_header_mid">
-			<div class="col-md-4 header-middle">
-				<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
-					<div class="clearfix"></div>
-				</form>
-			</div>
-			<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="../"><span>G</span>oreNani <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-			<!-- header-bot -->
-			<div class="col-md-4 agileits-social top_content">
-				<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-					<li class="share">Share On : </li>
-					<li><a href="#" class="facebook">
-							<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="twitter">
-							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="instagram">
-							<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-						</a></li>
-					<li><a href="#" class="pinterest">
-							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-						</a></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+	 <%@include file="header.jsp"%>
 	<!-- /banner_bottom_agile_info -->
 	<div class="page-head_agile_info_w3l">
 		<div class="container">
@@ -169,51 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- header-bot (로고 있는 부분) -->
 
 	<!-- //header-bot -->
-	<!-- banner -->
-	<div class="ban-top">
-		<div class="container">
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
-								<li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-								<li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
-								<li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
-								<li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
-								<li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-			<div class="top_nav_right">
-				<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-					<form action="#" method="post" class="last">
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<!-- style.css w3view-cart 색상 변경 및 projectSubmitButton 클래스 생성 -->
-						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write'">
-							<h5 class="projectSubmitButton">Project 신청</h5>
-						</button>
-					</form>
-
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+	
 	<div class="row">
     <!-- 분야 설정 분야 -->
     <div class="col-sm-2"><br></div>
@@ -223,31 +68,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <br><br><br>
       <h3>어떤 분야의 프로젝트를 진행할 예정인가요?</h3><br>
       <p>진행하려는 프로젝트에 가장 유사한 카테고리를 선택하세요.나중에 수정할 수 있습니다.</p>
-      <form role="form" class="submitProject" action="/front/project_write1" method="post" enctype="multipart/form-data">
+      <form role="form" class="submitProject" id="writeForm" action="/front/project_write1" method="post" enctype="multipart/form-data">
       		<input type="hidden" name = "title_image" value="">
             <input type="hidden" name = "attach_1" value="">
             <input type="hidden" name = "contents_image1" value="">
             <input type="hidden" name = "contents_image2" value="">
         	<input type="hidden" name = "attach_2" value="">
         	<input type="hidden" name = "attach_3" value="">
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <select name="category" class="custom-select" autofocus="autofocus">
-          <option selected>카테고리</option>
-          <option>테크,가전</option>
-          <option>패션,잡화</option>
-          <option>뷰티</option>
-          <option>푸드</option>
-          <option>홈리빙</option>
-          <option>디자인소품</option>
-          <option>여행,레저</option>
-          <option>스포츠,모빌리티</option>
-          <option>반려동물</option>
-          <option>모임</option>
-          <option>공연,컬쳐</option>
-          <option>소셜,캠페인</option>
-          <option>교육,키즈</option>
-          <option>출판</option>
-          <option>기부,후원</option>
+     		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+     		<input type="hidden" name="userid" value="<sec:authentication property="principal.username"/>">
+        <select name="category" id="category_id" class="custom-select" autofocus="autofocus">
+          <option value="카테고리" selected>카테고리</option>
+          <option value="테크/가전">테크/가전</option>
+          <option value="패션/잡화">패션/잡화</option>
+          <option value="뷰티">뷰티</option>
+          <option value="푸드">푸드</option>
+          <option value="홈리빙">홈리빙</option>
+          <option value="디자인소품">디자인소품</option>
+          <option value="여행/레저">여행/레저</option>
+          <option value="스포츠/모빌리티">스포츠/모빌리티</option>
+          <option value="게임/취미">게임/취미</option>
+          <option value="반려동물">반려동물</option>
+          <option value="모임">모임</option>
+          <option value="공연/컬쳐">공연/컬쳐</option>
+          <option value="소셜/캠페인">소셜/캠페인</option>
+          <option value="교육/키즈">교육/키즈</option>
+          <option value="출판">출판</option>
+          <option value="기부/후원">기부/후원</option>
         </select>
         <br><br>
         <br><br><br>
@@ -256,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <br><br><br><br>
         <h3>진행할 프로젝트를 간략하게 소개하세요.</h3><br>
         <p>무엇을 만들고 싶은지, 이루고 싶은 목표는 무엇인지 알려주세요.걱정하지 마세요! 나중에 수정할 수 있습니다.</p>
-        <textarea name="simple_content" class="form-control" rows="8" cols="70%" maxlength="100" placeholder="예) 중급! 일본어 문법 요점정리 POINT 20"></textarea>
+        <textarea name="simple_content" id="simple_content" class="form-control" rows="8" cols="70%" maxlength="100" placeholder="예) 중급! 일본어 문법 요점정리 POINT 20"></textarea>
         <br><br><br>
         <div class="sort-grid"></div>
         <h1>프로젝트 내용</h1>
@@ -265,8 +112,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <h3>연락처</h3>
         </div>
         <div class="col-sm-6">
-          <p>&nbsp(이메일GET)</p><br>
-          <input type="text" class="form-control" name="phone" placeholder="휴대폰 번호(- 없이)" size="30%">
+          <p>
+          	<sec:authentication property="principal.username"/>	
+          </p><br>
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="휴대폰 번호(- 없이)" size="30%">
+          <br><br><br>
+        </div>
+        <div class="col-sm-5">
+          <h3>회사명</h3>
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="company" id="company" placeholder="회사명" size="30%">
           <br><br><br>
         </div>
         <div class="row">
@@ -274,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3>목표 금액</h3>
           </div>
           <div class="col-sm-6">
-            <input type="number" class="form-control" min="0" name="achive_invest" step="10000" placeholder="(원)">
+            <input type="number" class="form-control" min="0" name="achive_invest" id="achive_invest" step="10000" placeholder="(원)">
             <br><br>
           </div>
         </div><br>
@@ -314,8 +170,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3>프로젝트 기간</h3>
           </div>
           <div class="col-sm-6">
-            <input type="date" name="project_start"/>~
-            <input type="date" name="project_end"/>
+            <input type="date" id="project_start" name="project_start"/>~
+            <input type="date" id="project_end" name="project_end"/>
             <br><br>
           </div>
         </div><br>
@@ -331,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 - 부가 서비스 이용 시, 추가 수수료가 발생될 수 있습니다.<br><br>
                 - 기부후원 프로젝트의 경우, 수수료가 다르게 적용됩니다.<br><br>
                 - 자세한 내용은 상세 약관 내용을 확인해주세요.<br><br>
-                <input type="checkbox" class="custom-control-input" name="SusuRyocheck">
+                <input type="checkbox" class="custom-control-input" id="SusuRyocheck" name="SusuRyocheck">
                 &nbsp&nbsp
                 <label for="SusuRyocheck">수수료 정책을 확인했으며 동의합니다.</label>
               </div>
@@ -372,11 +228,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div>
           <div style="margin-top:5%;margin-left:5%;">
             <h3>프로젝트 상세 내용</h3><br>
-            <textarea name="detail_content" rows="12" cols="90"></textarea>
+            <textarea name="detail_content" id="detail_content" rows="12" cols="90"></textarea>
           </div>
         </div>
         <div style="margin-top:5%;margin-left:5%;">
-          <input type="submit" class="nButton" name="submit" value="검토 요청">
+          <input type="button" class="nButton" id="submit_btn" name="submit_btn" value="검토 요청">
         </div><br><br>
       </form>
     </div>
@@ -542,7 +398,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- //here ends scrolling icon -->
-
+	
+	<script type="text/javascript">
+		// 검색 버튼 클릭 이벤트 작업포인트
+	var writeForm = $("#writeForm");
+	$("#submit_btn").on("click",	function(e) {
+		var target = document.getElementById("category_id");
+		
+   		if (target.options[target.selectedIndex].text == '카테고리') {
+			alert("카테고리를 선택하세요");
+			document.getElementById('category_id').focus();
+			return false;
+		} 
+   		else if (!writeForm.find("textarea[name='simple_content']").val()) {
+			alert("게시물 제목을 입력하세요.");
+			document.getElementById('simple_content').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='phone']").val()) {
+			alert("전화번호를 입력하세요.");
+			document.getElementById('phone').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='company']").val()) {
+			alert("회사명을 입력하세요.");
+			document.getElementById('company').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='achive_invest']").val()) {
+			alert("목표금액을 입력하세요.");
+			document.getElementById('achive_invest').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[id='imageUpload']").val()) {
+			alert("메인 이미지를 선택하세요.");
+			document.getElementById('imageUpload').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='project_start']").val()) {
+			alert("시작날짜를 선택하세요.");
+			document.getElementById('project_start').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='project_end']").val()) {
+			alert("종료날짜를 선택하세요.");
+			document.getElementById('project_end').focus();
+			return false;
+		}
+   		else if (!writeForm.find("input[name='SusuRyocheck']").is(":checked")) {
+			alert("약관을 동의해주세요.");
+			document.getElementById('SusuRyocheck').focus();
+			return false;
+		}
+   		else if (!writeForm.find("textarea[name='detail_content']").val()) {
+			alert("상세정보를 입력하세요.");
+			document.getElementById('detail_content').focus();
+			return false;
+		}
+   		else
+			writeForm.submit();
+	});
+	</script>
+	
 	<!-- for bootstrap working -->
 	<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/resources/js/bootstrap2.js"></script>
@@ -550,94 +467,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </html>
 
-<!--
-섹션3 저장용
-<div id="section3">
-	<br><br><br>
-	<h1>프로젝트 내용</h1><br><br>
-	<div class="col-sm-5">
-		<h3>연락처</h3>
-	</div>
-	<div class="col-sm-6">
-		<p>&nbsp(이메일GET)</p><br>
-		<input type="text" class="form-control" name="phone" placeholder="휴대폰 번호(- 없이)" size="30%">
-
-	</div><br><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>프로젝트 제목</h3>
-		</div>
-		<div class="col-sm-6">
-			<input type="text" name="simple_content" class="form-control" placeholder="예) 엄청 쉬운 히라가나 가타카나 (최대 40자)" size="35%" maxlength="40">
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>목표 금액</h3>
-		</div>
-		<div class="col-sm-6">
-			<input type="number" class="form-control" min="0" name="phone" step="10000" placeholder="(원)">
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>대표 이미지</h3>
-		</div>
-		<div class="col-sm-6">
-			<p>- 사이즈 : 300 x 400 이상</p>
-
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<img src="images/uploadPicture.png" style="width:85%">
-		</div>
-		<div class="col-sm-6">
-			<p>- 용량 : 3MB 미만</p>
-			<br>
-			<p>- 텍스트 및 로고 삽입 금지</p><br>
-			<input type="file" class="form-control-file border" id="imageUpload">
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>첨부 파일</h3>
-		</div>
-		<div class="col-sm-6">
-			<input type="file" class="form-control-file border" id="fileUpload">
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>프로젝트 기간</h3>
-		</div>
-		<div class="col-sm-6">
-			<input type="date" name="">~
-			<input type="date" name="">
-			<br>
-
-		</div>
-	</div><br>
-	<div class="row">
-		<div class="col-sm-5">
-			<h3>수수료</h3>
-		</div>
-		<div class="col-sm-11"><br>
-			<div class="jumbotron jumbotron-fluid">
-				<h3>오픈 수수료는 10%(VAT별도)입니다.</h3><br>
-				- 부가 서비스 이용 시, 추가 수수료가 발생될 수 있습니다.<br><br>
-				- 기부후원 프로젝트의 경우, 수수료가 다르게 적용됩니다.<br><br>
-				- 자세한 내용은 상세 약관 내용을 확인해주세요.<br><br>
-				<input type="checkbox" class="custom-control-input" name="SusuRyocheck">
-				<label for="SusuRyocheck">수수료 정책을 확인했으며 동의합니다.</label>
-			</div>
-		</div>
-	</div>
-</div>
-
- -->

@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<?php include "../db.php"; ?>
 <!DOCTYPE html>
 <html>
 
@@ -86,151 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-  <!-- header -->
-  <div class="header" id="home">
-		<div class="container">
-			<ul>
-				<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> 로그인 </a></li>
-				<li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
-				<li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-				<li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
-			</ul>
-		</div>
-	</div>
-  <!-- //header -->
-  <!-- header-bot -->
-  <div class="header-bot">
-    <div class="header-bot_inner_wthreeinfo_header_mid">
-      <div class="col-md-4 header-middle">
-        <form action="#" method="post">
-          <input type="search" name="search" placeholder="Search here..." required="">
-          <input type="submit" value=" ">
-          <div class="clearfix"></div>
-        </form>
-      </div>
-      <!-- header-bot -->
-      <div class="col-md-4 logo_agile">
-				<h1><a href="../"><span>G</span>oreNani <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-      <!-- header-bot -->
-      <div class="col-md-4 agileits-social top_content">
-        <ul class="social-nav model-3d-0 footer-social w3_agile_social">
-          <li class="share">Share On : </li>
-          <li><a href="#" class="facebook">
-              <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-              <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-            </a></li>
-          <li><a href="#" class="twitter">
-              <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-              <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-            </a></li>
-          <li><a href="#" class="instagram">
-              <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-              <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-            </a></li>
-          <li><a href="#" class="pinterest">
-              <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-              <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-            </a></li>
-        </ul>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  <!-- //header-bot -->
-  <!-- banner -->
-  <div class="ban-top">
-    <div class="container">
-      <div class="top_nav_left">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav menu__list">
-                <li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
-                <li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-                <li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
-                <li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
-                <li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
-                <li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div class="top_nav_right">
-        <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-          <form action="#" method="post" class="last">
-            <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="display" value="1">
-            <!-- style.css w3view-cart 색상 변경 및 projectSubmitButton 클래스 생성 -->
-            <button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write'">
-              <h5 class="projectSubmitButton">Project 신청</h5>
-            </button>
-          </form>
-
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  <!-- //banner-top -->
-  <!-- Modal1 -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body modal-body-sub_agile">
-          <div class="col-md-8 modal_body_left modal_body_left1">
-            <h3 class="agileinfo_sign">로그인<span></span></h3>
-            <form action="#" method="post">
-              <div class="styled-input agile-styled-input-top">
-                <input type="text" name="userid" required="">
-                <label>이메일 계정</label>
-                <span></span>
-              </div>
-              <div class="styled-input">
-                <input type="password" name="userpw" required="">
-                <label>비밀번호</label>
-                <span></span>
-                <input type="checkbox" name="remember" value="">
-                <font size="2em" color="black">아이디 저장</font>
-              </div>
-              <a href="#">
-                <input type="submit" value="로그인">
-              </a>
-            </form>
-            <div class="styled-input">
-              <p>
-                <font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
-                <a href="join">
-                  <font size="4em" color="black"><ins> 회원가입 </ins></font>
-                </a>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 modal_body_right modal_body_right1">
-            <img src="resources/images/log_pic.jpg" alt=" " />
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-      <!-- //Modal content-->
-    </div>
-  </div>
-  <!-- //Modal1 -->
+  <%@include file="header.jsp"%>
   <!-- /banner_bottom_agile_info -->
   <div class="page-head_agile_info_w3l">
     <div class="container">
@@ -282,7 +131,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="col-md-6 contact-form">
         <h3 class="white-w3ls">일반 <span>회원가입</span></h3>
         <br>
-        <form action="joinsuccess" method="post">
+        <form action="/join" method="post">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
           <div class="styled-input ">
             <input type="text" name="name" id="name" required="" autofocus>
             <label>이름</label>
@@ -312,14 +162,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label>비밀번호 입력</label>
             <font size="2em" color="gray">영문, 숫자, 특수문자를 조합한 8자 이상</font>
           </div>
-<!--           <div class="styled-input">
-            <input type="password" name="userpw2" id="userpw2" required="">
-            <label>비밀번호 확인</label>
-            <span></span>
-          </div> -->
+
           <br>
           <br>
           <font size="5em" color="white">기타 정보 입력</font>
+          <div class="styled-input">
+        
+        <select name="job" id="category_id" class="custom-select" autofocus="autofocus">
+          <option value="직종" selected>직종</option>
+          <option value="일반">일반</option>
+          <option value="공무원">공무원</option>
+          <option value="CEO">CEO</option>
+          <option value="자영업">자영업</option>
+          <option value="학생">학생</option>
+        </select>
+            <span></span>
+          
+          </div>
+          
           <div class="styled-input">
             <input type="text" name="address" id="address" required="">
             <label>거주지 주소</label>
@@ -401,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h4>Our <span>Information</span> </h4>
 						<ul>
 							<li><a href="../">Home</a></li>
-							<li><a href="total">한눈에보기</a></li>
+							
 							<li><a href="project">프로젝트</a></li>
 							<li><a href="open">오픈예정</a></li>
 							<li><a href="culture">문화콘텐츠</a></li>

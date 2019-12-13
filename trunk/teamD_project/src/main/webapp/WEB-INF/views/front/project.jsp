@@ -31,175 +31,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-<!-- header -->
-<div class="header" id="home">
-	<div class="container">
-		<ul>
-			<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i>로그인</a></li>
-			<li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
-			<li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-			<li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
-		</ul>
-	</div>
-</div>
-<!-- //header -->
-<!-- header-bot -->
-<div class="header-bot">
-	<div class="header-bot_inner_wthreeinfo_header_mid">
-		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="../"><span>G</span>oreNani<i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-        <!-- header-bot -->
-		<div class="col-md-4 agileits-social top_content">
-						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						                                   <li class="share">Share On : </li>
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter">
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
-
-
-
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //header-bot -->
-<!-- banner -->
-<div class="ban-top">
-	<div class="container">
-		<div class="top_nav_left">
-			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-					<li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
-					<li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
-					<li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
-					<li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
-				  </ul>
-				</div>
-			  </div>
-			</nav>
-		</div>
-		<div class="top_nav_right">
-			<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-						<form action="#" method="post" class="last">
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write'">
-							<h5 class="projectSubmitButton">Project 신청</h5>
-						</button>
-					</form>
-
-						</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //banner-top -->
-<!-- Modal1 -->
-<div class="modal fade" id="myModal" tabhome="-1" role="dialog">
-	<div class="modal-dialog">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
-			<div class="modal-body modal-body-sub_agile">
-				<div class="col-md-8 modal_body_left modal_body_left1">
-					<h3 class="agileinfo_sign">로그인<span></span></h3>
-					<form action="#" method="post">
-						<div class="styled-input agile-styled-input-top">
-							<input type="text" name="Email" required="">
-							<label>이메일 계정</label>
-							<span></span>
-						</div>
-						<div class="styled-input">
-							<input type="password" name="Password" required="">
-							<label>비밀번호</label>
-							<span></span>
-							<input type="checkbox" name="Remember" value="">
-							<font size="2em" color="black">아이디 저장</font>
-						</div>
-						<a href="#">
-							<input type="submit" value="로그인">
-						</a>
-					</form>
-					<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-														<li><a href="#" class="facebook">
-																<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="twitter">
-																<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="instagram">
-																<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="pinterest">
-																<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-													</ul> -->
-					<div class="styled-input">
-						<p>
-							<font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
-							<a href="join">
-								<font size="4em" color="black"><ins> 회원가입 </ins></font>
-							</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 modal_body_right modal_body_right1">
-					<img src="/resources/images/log_pic.jpg" alt=" " />
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- //Modal content-->
-	</div>
-</div>
-<!-- //Modal1 -->
-
+ <%@include file="header.jsp"%>
 <!-- /banner_bottom_agile_info -->
 <div class="page-head_agile_info_w3l">
 		<div class="container">
-			<h3> <span>Projcet  </span></h3>
+			<h3> <span>프로젝트 </span></h3>
 			<!--/w3_short-->
 				 <div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
 
 						   <ul class="w3_short">
 								<li><a href="../">Home</a><i>|</i></li>
-								<li>project</li>
+								<li>진행중인 프로젝트</li>
 							</ul>
 						 </div>
 				</div>
@@ -215,30 +58,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="filter-price">
 
 			</div>
+			<form id='searchForm2' action="/front/project" method='get'>
+			<input type='hidden' name='type' value="C" />
+			<input type='hidden' name='pageNum'	value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+			<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
+			<input type='hidden' name='p_type' value='<c:out value="${pageMaker.cri.p_type}"/>' />
+			
 			<div class="css-treeview">
 				<h4>Categories</h4>
 				<ul class="tree-list-pad">
 					<li><input type="checkbox" checked="checked" id="item-0" /><label for="item-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> 진행중인 프로젝트</label>
-						<ul>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>테크.가전</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>패션.잡화</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>뷰티</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>(카테고리)</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>홈.리빙</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>디자인소품</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>여행.레저</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>스포츠.모빌리티</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>반려동물</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>모임</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>공연.컬쳐</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>소셜.캠페인</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>교육.키즈</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>게임.취미</label></li>
-							<li><input type="checkbox" id="item-0-0" /><label for="item-0-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>출판</label></li>
+						<ul><!-- 작업포인트 -->
+							<li><input type="submit" name='keyword' value="테크/가전"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>테크,가전</li>
+							<li><input type="submit" name='keyword' value="패션/잡화"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>패션/잡화</li>
+							<li><input type="submit" name='keyword' value="뷰티"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>뷰티</li>
+							<li><input type="submit" name='keyword' value="홈/리빙"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>홈/리빙</li>
+							<li><input type="submit" name='keyword' value="디자인소품"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>디자인소품</li>
+							<li><input type="submit" name='keyword' value="여행/레저"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>여행/레저</li>
+							<li><input type="submit" name='keyword' value="스포츠/모빌리티"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>스포츠/모빌리티</li>
+							<li><input type="submit" name='keyword' value="반려동물"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>반려동물</li>
+							<li><input type="submit" name='keyword' value="교육/키즈"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>교육/키즈</li>
+							<li><input type="submit" name='keyword' value="푸드"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>푸드</li>
 						</ul>
 					</li>
 				</ul>
 			</div>
+			</form>
 			<div class="clearfix"></div>
 		</div>
 
@@ -250,15 +95,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div  id="top" class="callbacks_container">
 					<ul class="rslides" id="slider3">
-						<li>
-							<img class="img-responsive" src="/resources/images/banner2.jpg" alt=" "/>
-						</li>
-						<li>
-							<img class="img-responsive" src="/resources/images/banner5.jpg" alt=" "/>
-						</li>
-						<li>
-							<img class="img-responsive" src="/resources/images/banner3.jpg" alt=" "/>
-						</li>
+					<c:forEach items="${rank_list}" var="project_rank">
+						<c:if test="${not empty project_rank.title_image}">
+							<li>
+								<a href="single?project_num=${project_rank.project_num}">
+									<img src="/resources/upload/${project_rank.title_image}" style="width:800px; height:350px;">
+								</a>
+							</li>
+						</c:if>
+						<c:if test="${empty project_rank.title_image}">
+							<li>
+								<img class="card-img-top" src="http://placehold.it/800x350" alt="">
+							</li>
+						</c:if>
+						
+					</c:forEach>
 
 					</ul>
 				</div>
@@ -268,47 +119,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--펀딩 목록-->
 	<br>			               
-
-<%--                      <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
-                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}" /></td>
-    --%>
-              
                <c:forEach items="${list}" var="project">
-					<div class="col-md-4 product-men">
-								<div class="men-pro-item simpleCart_shelfItem" style="margin-left:10px;">
-									<div class="men-thumb-item">
-										<%--<img src="${project.title_image}" alt="" class="pro-image-front"> --%>
-										<c:if test="${not empty project.title_image}">
-											<a href="/resources/upload/${project.title_image}" target="_blank" class="pro-image-front"><img src="/resources/upload/${project.title_image}"></a>
-										</c:if>
+               <!-- 날짜 퍼센트 관련 처리부분 -->
+				<jsp:useBean id="now" class="java.util.Date" />
+				<fmt:formatDate value="${project.project_start}" pattern="yyyy-MM-dd" var="openDate"/>
+				<fmt:formatDate value="${project.project_end}" pattern="yyyy-MM-dd" var="closeDate"/>
+				<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" />       
+
+				<fmt:parseDate value="${openDate}" var="strPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${strPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="strDate"></fmt:parseNumber>
+				<fmt:parseDate value="${closeDate}" var="endPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${endPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="endDate"></fmt:parseNumber>
 										
-										<img src="/resources/images/123.png" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="/front/single" class="link-product-add-cart">view Funding</a>
-												</div>
-											</div>
-											<span class="product-new-top">진행중</span>
+				<fmt:parseDate value="${nowDate}" var="nowPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${nowPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="nowDate"></fmt:parseNumber>
+										<!-- 날짜 퍼센트 관련 처리부분 여기까지 -->
+										
+										
+               	<%--<c:if test="${(strDate <= nowDate && endDate-nowDate > 0)}"></c:if> --%>
+					<div class="col-md-4 product-men" style="width: 240px; height: 325px; margin: 0 0 30px 0; cursor: pointer;" onclick="location.href='single?project_num=${project.project_num}'">
+								<div class="men-pro-item simpleCart_shelfItem" style="margin-left:10px;">
+									<div style="">
+											<c:if test="${not empty project.title_image}">
+												<img src="/resources/upload/${project.title_image}">
+											</c:if>
+											<c:if test="${empty project.title_image}">
+												<img class="card-img-top" src="http://placehold.it/700x560" alt="">
+											</c:if>
+												<span class="product-new-top">진행중</span>
+
+								
 									</div>
 									<hr>
-									<div class="item-info-product ">
+									<div class="item-info-product" style="">
+										
+										
+										<!-- 프로젝트 목록 출력부분 -->
 										<h4><a href="single?project_num=${project.project_num}"><c:out value="${project.simple_content}" /></a></h4>
 										<div class="info-product-price">
 											<p><c:out value="${project.category}"/></p>
 											            <div class="progress" style="width:90%; height:7px; margin:0 auto;">
-											              <div class="progress-bar progress-bar-success" style="width:70%"></div>
+											              <div class="progress-bar progress-bar-success" style="width:${(project.current_invest / project.achive_invest) * 100}%"></div>
 											              <!--모금현황-->
 											            </div>
-											           <div><ul><c:out value="${project.current_invest}원"/> 31일<p style="text-align: right"></p></ul></div>
-											           <c:out value="${project.project_start}" />
-											           <%--  <span class="item_price"><c:out value="${project.current_invest}원" /></span> --%>
-											
+											           <div></div>
+														<div style="float: left; width: 20%; ">
+															<strong style="font-size: 15px; color: #00CCCC;"><fmt:formatNumber value="${(project.current_invest / project.achive_invest) * 100}" pattern="##.#" />%</strong>
+														</div>
+														<div style="float: left; width: 55%; ">
+															<fmt:formatNumber value="${project.current_invest}" pattern="#,###,###,###,###"/>원
+														</div>
+														<div style="float: right; width: 25%; ">
+															<strong style="text-align: right"> ${endDate - nowDate} 일</strong>
+														</div>
 										</div>
+										<!-- 프로젝트 목록 출력부분 여기까지 -->
 									</div>
 								</div>
 					</div>
+					
 				 </c:forEach>
-				 
+				
 				 
 				 		 
 				<div class="clearfix"></div>
@@ -321,26 +192,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<form id='searchForm' action="/front/project" method='get'>
 							<select name='type'>
 								<option value=""
-									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
+									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--
+								</option>
 								<option value="T"
-									<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
+									<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목
+								</option>
 								<option value="C"
-									<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>카테고리</option>
+									<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>카테고리
+								</option>
 								<option value="W"
-									<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
-								<option value="TC"
-									<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>제목
-									or 내용</option>
-								<option value="TW"
-									<c:out value="${pageMaker.cri.type eq 'TW'?'selected':''}"/>>제목
-									or 작성자</option>
-								<option value="TWC"
-									<c:out value="${pageMaker.cri.type eq 'TWC'?'selected':''}"/>>제목
-									or 내용 or 작성자</option>
+									<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자
+								</option>
+
 							</select>
 							<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword}"/>' />
 							<input type='hidden' name='pageNum'	value='<c:out value="${pageMaker.cri.pageNum}"/>' />
 							<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
+							<input type='hidden' name='p_type' value='<c:out value="${pageMaker.cri.p_type}"/>' />
 							<button class='btn btn-default'>Search</button>
 						</form>
 					</div>
@@ -409,10 +277,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Our <span>Information</span> </h4>
 					<ul>
 						<li><a href="../">Home</a></li>
-						<li><a href="total">한눈에보기</a></li>
+						
 						<li><a href="project">프로젝트</a></li>
 						<li><a href="open">오픈예정</a></li>
-						<li><a href="culture">문화콘텐츠</a></li>
+						<li><a href="culture_project">문화콘텐츠</a></li>
 						<li><a href="end">종료된 프로젝트</a></li>
 					</ul>
 				</div>
@@ -627,32 +495,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //here ends scrolling icon -->
 
 <!-- 페이징이나 여러 기능과 관련된 스크립트 -->
-<script type="text/javascript">
-   $(document).ready(function() {
-      var result = '<c:out value="${result}"/>';
-      
-      checkModal(result);
-
-      history.replaceState({}, null, null);
-
-      function checkModal(result) {
-
-         if (result === '' || history.state) {
-            return;
-         }
-
-         if (parseInt(result) > 0) {
-            $(".modal-body").html("게시글 " + parseInt(result)   + " 번이 등록되었습니다.");
-         }
-
-         $("#myModal").modal("show");
-      }
-      
-      $("#regBtn").on("click", function() {
-         self.location = "/board/register";
-      });
-   });
-   
+<script type="text/javascript">   
    var actionForm = $("#actionForm");
 
     // 페이지 번호 클릭 이벤트
@@ -671,7 +514,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        actionForm.submit();
     });
     
- 	// 검색 버튼 클릭 이벤트
+ 	// 검색 버튼 클릭 이벤트 작업포인트
 	var searchForm = $("#searchForm");
 	$("#searchForm button").on("click",	function(e) {
 		if (!searchForm.find("option:selected").val()) {
@@ -688,6 +531,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		e.preventDefault();
 		searchForm.submit();
 	});
+
+
+
+
     
 </script>
 <!-- 페이징이나 여러 기능과 관련된 스크립트 여기까지 -->

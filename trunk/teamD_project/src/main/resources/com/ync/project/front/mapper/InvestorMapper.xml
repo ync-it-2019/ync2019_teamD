@@ -22,15 +22,39 @@
 	</resultMap>
 
 
-	<select id="read" resultMap="InvestorMap">
-	SELECT	investor_num,
-			project_num,
-			amount,
-			score,
-			job,
-			userid 
+	<select id="investor_read" resultType="com.ync.project.domain.InvestorVO">
+	SELECT	*
 	FROM	teamd_investor
-	WHERE	userid = #{userid} 
+	WHERE	project_num = #{project_num}
+	order by invest_date desc
+	</select>
+	
+	<select id="myPageProject" resultType="com.ync.project.domain.InvestorVO">
+		<![CDATA[
+			SELECT	pj.simple_content, 
+					iv.amount, 
+					iv.invest_date
+			FROM	teamd_project pj, 
+					teamd_investor iv
+			WHERE	iv.userid = #{userid}
+			AND		pj.project_num = iv.project_num
+		]]>
+	</select>
+	
+	<select id="getList" resultType="com.ync.project.domain.InvestorVO">
+	<![CDATA[
+		SELECT 	i.score,
+				i.userid,
+				i.amount,
+				i.invest_date,
+				i.job,
+	  			m.nickname,
+	  			m.profile_image
+		FROM   	teamd_investor i,
+	   			teamd_member m
+		WHERE   project_num = #{project_num}
+		AND     i.userid = m.userid
+		]]>
 	</select>
 	
 	<insert id="insert">
@@ -43,14 +67,40 @@
 							userid 
 						)
 		VALUES(
-				#{investor_num),
-				#{project_num),
-				#{amount),
-				#{score),
-				#{job),
-				#{userid)
+				#{investor_num},
+				#{project_num},
+				#{amount},
+				#{score},
+				#{job},
+				#{userid}
 		)
 	</insert>
+	
+	<insert id="funding">
+		INSERT	INTO	teamd_investor(
+							investor_num,
+							project_num,
+							amount,
+							score,
+							job,
+							userid 
+						)
+		VALUES(
+				teamd_seq_investor.nextval,
+				#{project_num},
+				#{amount},
+				#{score},
+				#{job},
+				#{userid}
+		)
+	</insert>
+	<update id="update_current">
+		UPDATE	teamd_project
+		SET		current_invest = current_invest + #{amount}
+		WHERE	project_num = #{project_num}
+	</update>
+	
+	
 	
 	<update id="update">
 		UPDATE	teamd_investor
@@ -62,4 +112,5 @@
 				userid = #{userid}
 		WHERE	userid = #{userid}
 	</update>
+	
 </mapper>

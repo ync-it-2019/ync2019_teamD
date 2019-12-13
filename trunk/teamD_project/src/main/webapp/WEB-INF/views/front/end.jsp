@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | end :: w3layouts</title>
+<title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | women's :: w3layouts</title>
 <!--/tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,176 +18,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//tags -->
-<link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="resources/css/font-awesome.css" rel="stylesheet">
+<link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="/resources/css/jquery-ui.css">
+<link href="/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/resources/css/font-awesome.css" rel="stylesheet">
 <!-- //for bootstrap working -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 </head>
 <body>
-<!-- header -->
-<div class="header" id="home">
-	<div class="container">
-		<ul>
-			<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i>로그인</a></li>
-			<li> <a href="join"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 회원가입 </a></li>
-			<li> <a href="myPage"><i class="fa fa-user" aria-hidden="true"></i> 마이페이지 </a></li>
-			<li> <a href="notice"><i class="fa fa-envelope-o" aria-hidden="true"></i> 고객센터 </a></li>
-		</ul>
-	</div>
-</div>
-<!-- //header -->
-<!-- header-bot -->
-<div class="header-bot">
-	<div class="header-bot_inner_wthreeinfo_header_mid">
-		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
-				<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="../"><span>G</span>oreNani <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-        <!-- header-bot -->
-		<div class="col-md-4 agileits-social top_content">
-						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						                                   <li class="share">Share On : </li>
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter">
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
-
-
-
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //header-bot -->
-<!-- banner -->
-<div class="ban-top">
-	<div class="container">
-		<div class="top_nav_left">
-			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav menu__list">
-					<li class="active menu__item"><a class="menu__link" href="../">HOME <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="total">한눈에보기</a></li>
-					<li class=" menu__item"><a class="menu__link" href="project">프로젝트</a></li>
-					<li class=" menu__item"><a class="menu__link" href="open">오픈예정</a></li>
-					<li class=" menu__item"><a class="menu__link" href="culture">문화콘텐츠</a></li>
-					<li class=" menu__item"><a class="menu__link" href="end">종료된프로젝트</a></li>
-					</ul>
-				</div>
-				</div>
-			</nav>
-		</div>
-		<div class="top_nav_right">
-			<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-						<form action="#" method="post" class="last">
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<button class="w3view-cart" type="submit" name="submit" onclick = "location.href = 'project_write'">
-							<h5 class="projectSubmitButton">Project 신청</h5>
-						</button>
-					</form>
-
-						</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	</div>
-<!-- //banner-top -->
-<!-- Modal1 -->
-<div class="modal fade" id="myModal" tabhome="-1" role="dialog">
-	<div class="modal-dialog">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
-			<div class="modal-body modal-body-sub_agile">
-				<div class="col-md-8 modal_body_left modal_body_left1">
-					<h3 class="agileinfo_sign">로그인<span></span></h3>
-					<form action="#" method="post">
-						<div class="styled-input agile-styled-input-top">
-							<input type="text" name="Email" required="">
-							<label>이메일 계정</label>
-							<span></span>
-						</div>
-						<div class="styled-input">
-							<input type="password" name="Password" required="">
-							<label>비밀번호</label>
-							<span></span>
-							<input type="checkbox" name="Remember" value="">
-							<font size="2em" color="black">아이디 저장</font>
-						</div>
-						<a href="#">
-							<input type="submit" value="로그인">
-						</a>
-					</form>
-					<!-- <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-														<li><a href="#" class="facebook">
-																<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="twitter">
-																<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="instagram">
-																<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-														<li><a href="#" class="pinterest">
-																<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-													</ul> -->
-					<div class="styled-input">
-						<p>
-							<font size="2em" color="gray">아직 계정이 없으신가요?</font>&nbsp;
-							<a href="join">
-								<font size="4em" color="black"><ins> 회원가입 </ins></font>
-							</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 modal_body_right modal_body_right1">
-					<img src="resources/images/log_pic.jpg" alt=" " />
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- //Modal content-->
-	</div>
-</div>
-<!-- //Modal1 -->
-
+ <%@include file="header.jsp"%>
 <!-- /banner_bottom_agile_info -->
 <div class="page-head_agile_info_w3l">
 		<div class="container">
-			<h3><span>종료된 프로젝트 </span></h3>
+			<h3><span>종료된 프로젝트  </span></h3>
 			<!--/w3_short-->
 				 <div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
@@ -201,494 +47,382 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <!--//w3_short-->
 	</div>
 </div>
-   <!--/end-->
-	 <!-- /한눈에보기프로젝트-->
- 	<div class="col-md-4 product-men">
+
+<!-- /한눈에보기프로젝트-->
+	 <c:forEach items="${list}" var="project">
+	 <!-- 날짜 퍼센트 관련 처리부분 -->
+				<jsp:useBean id="now" class="java.util.Date" />
+				<fmt:formatDate value="${project.project_start}" pattern="yyyy-MM-dd" var="openDate"/>
+				<fmt:formatDate value="${project.project_end}" pattern="yyyy-MM-dd" var="closeDate"/>
+				<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" />       
+
+				<fmt:parseDate value="${openDate}" var="strPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${strPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="strDate"></fmt:parseNumber>
+				<fmt:parseDate value="${closeDate}" var="endPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${endPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="endDate"></fmt:parseNumber>
+										
+				<fmt:parseDate value="${nowDate}" var="nowPlanDate" pattern="yyyy-MM-dd"/>
+				<fmt:parseNumber value="${nowPlanDate.time / (1000*60*60*24)}" integerOnly="true" var="nowDate"></fmt:parseNumber>
+										<!-- 날짜 퍼센트 관련 처리부분 여기까지 -->
+										
+ 	<div class="col-md-4 product-men" style="width:30%; margin: 30px 10px 10px 10px; cursor: pointer;" onclick="location.href='single_end?project_num=${project.project_num}'">
  							<div class="men-pro-item simpleCart_shelfItem">
- 								<div class="men-thumb-item">
- 									<img src="resources/images/123.png" alt="" class="pro-image-front">
- 									<img src="resources/images/123.png" alt="" class="pro-image-back">
- 										<div class="men-cart-pro">
- 											<div class="inner-men-cart-pro">
- 												<a href="single" class="link-product-add-cart">view Funding</a>
- 											</div>
- 										</div>
+ 								
+ 									<c:if test="${not empty project.title_image}">
+												<img src="/resources/upload/${project.title_image}">
+											</c:if>
+											<c:if test="${empty project.title_image}">
+												<img class="card-img-top" src="http://placehold.it/700x560" alt="">
+											</c:if>
  										<span class="product-new-top2">END</span>
 
- 								</div>
+ 								
 
  								<div class="item-info-product ">
- 									<h4><a href="single">꼭 그렇게 (펀딩)</a></h4>
+ 									<h4><a href="single_end?project_num=${project.project_num}"><c:out value="${project.simple_content}"></c:out></a></h4>
  									<div class="info-product-price">
- 										<span class="item_price">$120.99</span>
- 										<p>테크.가전</p>
- 									</div>
+											<p><c:out value="${project.category}"/></p>
+											            <div class="progress" style="width:90%; height:7px; margin:0 auto;">
+											              <div class="progress-bar progress-bar-success" style="width:${(project.current_invest / project.achive_invest) * 100}%"></div>
+											              <!--모금현황-->
+											            </div>
+											           <div></div>
+														<div style="float: left; width: 20%; ">
+															<strong style="font-size: 15px; color: #00CCCC;"><fmt:formatNumber value="${(project.current_invest / project.achive_invest) * 100}" pattern="##.#" />%</strong>
+														</div>
+														<div style="float: left; width: 55%; ">
+															<fmt:formatNumber value="${project.achive_invest}" pattern="#,###,###,###,###"/>원
+														</div>
+														<div style="float: right; width: 25%; ">
+															<strong style="text-align: right">종료</strong>
+														</div>
+										</div>
 
 
  								</div>
  							</div>
  						</div>
+	</c:forEach>
 
+ 			<div class="clearfix" style="margin: 0 0 0 50px;">
+ 			        <!-- 검색 영역 시작 -->
+				<div class='row'>
+					<div class="col-lg-12">
+						<form id='searchForm' action="/front/open" method='get'>
+							<select name='type'>
+								<option value=""
+									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
+								<option value="T"
+									<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>>제목</option>
+								<option value="C"
+									<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>카테고리</option>
+								<option value="W"
+									<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>작성자</option>
+							</select>
+							<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword}"/>' />
+							<input type='hidden' name='pageNum'	value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+							<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
+							<input type='hidden' name='p_type' value='<c:out value="${pageMaker.cri.p_type}"/>' />
+							<button class='btn btn-default'>Search</button>
+						</form>
+					</div>
+				</div>
+			<div class='pull-right'>
+               <ul class="pagination">
 
+                  <c:if test="${pageMaker.prev}">
+                     <li class="paginate_button previous"><a href="${pageMaker.startPage -1}">Previous</a></li>
+                  </c:if>
 
- 	<div class="col-md-4 product-men">
- 							<div class="men-pro-item simpleCart_shelfItem">
- 								<div class="men-thumb-item">
- 									<img src="resources/images/123.png" alt="" class="pro-image-front">
- 									<img src="resources/images/123.png" alt="" class="pro-image-back">
- 										<div class="men-cart-pro">
- 											<div class="inner-men-cart-pro">
- 												<a href="single" class="link-product-add-cart">view Funding</a>
- 											</div>
- 										</div>
- 										<span class="product-new-top2">END</span>
+                  <c:forEach var="num" begin="${pageMaker.startPage}"   end="${pageMaker.endPage}">
+                     <li class="paginate_button  ${pageMaker.cri.pageNum == num ? "active":""} ">
+                        <a href="${num}">${num}</a>
+                     </li>
+                  </c:forEach>
 
- 								</div>
- 								<div class="item-info-product ">
- 									<h4><a href="single">다 가져가야만 (펀딩)</a></h4>
- 									<div class="info-product-price">
- 										<span class="item_price">$290.99</span>
- 										<p>뷰티</p>
- 									</div>
+                  <c:if test="${pageMaker.next}">
+                     <li class="paginate_button next"><a href="${pageMaker.endPage +1 }">Next</a></li>
+                  </c:if> 
 
-
- 								</div>
- 							</div>
- 						</div>
-
-
-
- 	<div class="col-md-4 product-men">
- 							<div class="men-pro-item simpleCart_shelfItem">
- 								<div class="men-thumb-item">
- 									<img src="resources/images/123.png" alt="" class="pro-image-front">
- 									<img src="resources/images/123.png" alt="" class="pro-image-back">
- 										<div class="men-cart-pro">
- 											<div class="inner-men-cart-pro">
- 												<a href="single" class="link-product-add-cart">view Funding</a>
- 											</div>
- 										</div>
- 										<span class="product-new-top2">END</span>
-
- 								</div>
- 								<div class="item-info-product ">
- 									<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 									<div class="info-product-price">
- 										<span class="item_price">$120.99</span>
- 										<p>푸드</p>
- 									</div>
-
-
- 								</div>
- 							</div>
- 						</div>
-
-
-
- 	<div class="col-md-4 product-men">
- 											<div class="men-pro-item simpleCart_shelfItem">
- 												<div class="men-thumb-item">
- 													<img src="resources/images/123.png" alt="" class="pro-image-front">
- 													<img src="resources/images/123.png" alt="" class="pro-image-back">
- 														<div class="men-cart-pro">
- 															<div class="inner-men-cart-pro">
- 																<a href="single" class="link-product-add-cart">view Funding</a>
- 															</div>
- 														</div>
- 														<span class="product-new-top2">END</span>
-
- 												</div>
- 												<div class="item-info-product ">
- 													<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 													<div class="info-product-price">
- 														<span class="item_price">$120.99</span>
- 														<p>푸드</p>
- 													</div>
-
-
- 												</div>
- 											</div>
- 										</div>
-
-
-
- 	<div class="col-md-4 product-men">
- 															<div class="men-pro-item simpleCart_shelfItem">
- 																<div class="men-thumb-item">
- 																	<img src="resources/images/123.png" alt="" class="pro-image-front">
- 																	<img src="resources/images/123.png" alt="" class="pro-image-back">
- 																		<div class="men-cart-pro">
- 																			<div class="inner-men-cart-pro">
- 																				<a href="single" class="link-product-add-cart">view Funding</a>
- 																			</div>
- 																		</div>
- 																		<span class="product-new-top2">END</span>
-
- 																</div>
- 																<div class="item-info-product ">
- 																	<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 																	<div class="info-product-price">
- 																		<span class="item_price">$120.99</span>
- 																		<p>푸드</p>
- 																	</div>
-
-
- 																</div>
- 															</div>
- 														</div>
-
-
-
- 	<div class="col-md-4 product-men">
- 																			<div class="men-pro-item simpleCart_shelfItem">
- 																				<div class="men-thumb-item">
- 																					<img src="resources/images/123.png" alt="" class="pro-image-front">
- 																					<img src="resources/images/123.png" alt="" class="pro-image-back">
- 																						<div class="men-cart-pro">
- 																							<div class="inner-men-cart-pro">
- 																								<a href="single" class="link-product-add-cart">view Funding</a>
- 																							</div>
- 																						</div>
- 																						<span class="product-new-top2">END</span>
-
- 																				</div>
- 																				<div class="item-info-product ">
- 																					<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 																					<div class="info-product-price">
- 																						<span class="item_price">$120.99</span>
- 																						<p>푸드</p>
- 																					</div>
-
-
- 																				</div>
- 																			</div>
- 																		</div>
-
-
-
- 	<div class="col-md-4 product-men">
- 																							<div class="men-pro-item simpleCart_shelfItem">
- 																								<div class="men-thumb-item">
- 																									<img src="resources/images/123.png" alt="" class="pro-image-front">
- 																									<img src="resources/images/123.png" alt="" class="pro-image-back">
- 																										<div class="men-cart-pro">
- 																											<div class="inner-men-cart-pro">
- 																												<a href="single" class="link-product-add-cart">view Funding</a>
- 																											</div>
- 																										</div>
- 																										<span class="product-new-top2">END</span>
-
- 																								</div>
- 																								<div class="item-info-product ">
- 																									<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 																									<div class="info-product-price">
- 																										<span class="item_price">$120.99</span>
- 																										<p>푸드</p>
- 																									</div>
-
-
- 																								</div>
- 																							</div>
- 																						</div>
-
-
-
- 		<div class="col-md-4 product-men">
- 																											<div class="men-pro-item simpleCart_shelfItem">
- 																												<div class="men-thumb-item">
- 																													<img src="resources/images/123.png" alt="" class="pro-image-front">
- 																													<img src="resources/images/123.png" alt="" class="pro-image-back">
- 																														<div class="men-cart-pro">
- 																															<div class="inner-men-cart-pro">
- 																																<a href="single" class="link-product-add-cart">view Funding</a>
- 																															</div>
- 																														</div>
- 																														<span class="product-new-top2">END</span>
-
- 																												</div>
- 																												<div class="item-info-product ">
- 																													<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 																													<div class="info-product-price">
- 																														<span class="item_price">$120.99</span>
- 																														<p>푸드</p>
- 																													</div>
-
-
- 																												</div>
- 																											</div>
- 																										</div>
-
-
- 	<div class="col-md-4 product-men">
- 																															<div class="men-pro-item simpleCart_shelfItem">
- 																																<div class="men-thumb-item">
- 																																	<img src="resources/images/123.png" alt="" class="pro-image-front">
- 																																	<img src="resources/images/123.png" alt="" class="pro-image-back">
- 																																		<div class="men-cart-pro">
- 																																			<div class="inner-men-cart-pro">
- 																																				<a href="single" class="link-product-add-cart">view Funding</a>
- 																																			</div>
- 																																		</div>
- 																																		<span class="product-new-top2">END</span>
-
- 																																</div>
- 																																<div class="item-info-product ">
- 																																	<h4><a href="single">속이 후련했냐! (펀딩)</a></h4>
- 																																	<div class="info-product-price">
- 																																		<span class="item_price">$120.99</span>
- 																																		<p>푸드</p>
- 																																	</div>
-
-
- 																																</div>
- 																															</div>
- 																														</div>
-
- 			<div class="clearfix"></div>
-
-
-
-
- 	<!-- //team -->
-
- 		<!-- schedule-bottom -->
-
- 	<!-- //schedule-bottom -->
-
- 	  <!-- banner-bootom-w3-agileits -->
-
-
- 	<!--/grids-->
-
- 	<!--/grids-->
- 		<!-- /we-offer -->
- 			<div class="sale-w3ls">
- 				<div class="container">
- 					<h6>今が<span>チャンス!</span> </h6>
-
- 					<a class="hvr-outline-out button2" href="single">Funding Now </a>
- 				</div>
+               </ul>
+            </div>
+            
  			</div>
- 		<!-- //we-offer -->
- 	<!--/grids-->
 
- 	<!--grids-->
- 	<!-- footer -->
- 	<div class="footer">
- 		<div class="footer_agile_inner_info_w3l">
- 			<div class="col-md-3 footer-left">
- 				<h2><a href="../"><span>G</span>oreNani </a></h2>
- 				<p>Lorem ipsum quia dolor
- 				sit amet, consectetur, adipisci velit, sed quia non
- 				numquam eius modi tempora.</p>
- 				<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
- 																<li><a href="#" class="facebook">
- 																	  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
- 																	  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
- 																<li><a href="#" class="twitter">
- 																	  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
- 																	  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
- 																<li><a href="#" class="instagram">
- 																	  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
- 																	  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
- 																<li><a href="#" class="pinterest">
- 																	  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
- 																	  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
- 															</ul>
- 			</div>
- 			<div class="col-md-9 footer-right">
- 				<div class="sign-grds">
- 					<div class="col-md-4 sign-gd">
- 						<h4>Our <span>Information</span> </h4>
- 						<ul>
-							<li><a href="../">Home</a></li>
-							<li><a href="total">한눈에보기</a></li>
-							<li><a href="project">프로젝트</a></li>
-							<li><a href="open">오픈예정</a></li>
-							<li><a href="culture">문화콘텐츠</a></li>
-							<li><a href="end">종료된 프로젝트</a></li>
- 						</ul>
- 					</div>
 
- 					<div class="col-md-5 sign-gd-two">
- 						<h4>Gorenani <span>Information</span></h4>
- 						<div class="w3-address">
- 							<div class="w3-address-grid">
- 								<div class="w3-address-left">
- 									<i class="fa fa-phone" aria-hidden="true"></i>
- 								</div>
- 								<div class="w3-address-right">
- 									<h6>Phone Number</h6>
- 									<p>+82 234 567 8901</p>
- 								</div>
- 								<div class="clearfix"> </div>
- 							</div>
- 							<div class="w3-address-grid">
- 								<div class="w3-address-left">
- 									<i class="fa fa-envelope" aria-hidden="true"></i>
- 								</div>
- 								<div class="w3-address-right">
- 									<h6>Email Address</h6>
- 									<p>Email :<a href="mailto:example@email.com"> Easy@naver.com</a></p>
- 								</div>
- 								<div class="clearfix"> </div>
- 							</div>
- 							<div class="w3-address-grid">
- 								<div class="w3-address-left">
- 									<i class="fa fa-map-marker" aria-hidden="true"></i>
- 								</div>
- 								<div class="w3-address-right">
- 									<h6>Location</h6>
- 									<p>South of Korea
 
- 									</p>
- 								</div>
- 								<div class="clearfix"> </div>
- 							</div>
- 						</div>
- 					</div>
- 					<div class="col-md-3 sign-gd flickr-post">
- 						<h4>D<span>eveloper</span></h4>
 
- 						<ul>
- 							<li>김현진</li> <br>
- 							<li>이미영</li> <br>
- 							<li>이지원</li> <br>
- 							<li>이준혁</li> <br>
- 							<li>이승철</li>
- 						</ul>
+<!-- //team -->
 
- 					</div>
- 					<div class="clearfix"></div>
- 				</div>
- 			</div>
- 			<div class="clearfix"></div>
+	<!-- schedule-bottom -->
 
- 			<p class="copy-right">&copy 2019 GoreNani. All rights reserved | Design by <a href="http://w3layouts.com/">GoreNani</a></p>
- 		</div>
- 	</div>
- 	<!-- //footer -->
+<!-- //schedule-bottom -->
 
- 	<!-- login -->
- 				<div class="modal fade" id="myModal4" tabhome="-1" role="dialog" aria-labelledby="myModalLabel">
- 					<div class="modal-dialog" role="document">
- 						<div class="modal-content modal-info">
- 							<div class="modal-header">
- 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
- 							</div>
- 							<div class="modal-body modal-spa">
- 								<div class="login-grids">
- 									<div class="login">
- 										<div class="login-bottom">
- 											<h3>Sign up for free</h3>
- 											<form>
- 												<div class="sign-up">
- 													<h4>Email :</h4>
- 													<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
- 												</div>
- 												<div class="sign-up">
- 													<h4>Password :</h4>
- 													<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+  <!-- banner-bootom-w3-agileits -->
 
- 												</div>
- 												<div class="sign-up">
- 													<h4>Re-type Password :</h4>
- 													<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
- 												</div>
- 												<div class="sign-up">
- 													<input type="submit" value="REGISTER NOW" >
- 												</div>
+<!--/grids-->
 
- 											</form>
- 										</div>
- 										<div class="login-right">
- 											<h3>Sign in with your account</h3>
- 											<form>
- 												<div class="sign-in">
- 													<h4>Email :</h4>
- 													<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
- 												</div>
- 												<div class="sign-in">
- 													<h4>Password :</h4>
- 													<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
- 													<a href="#">Forgot password?</a>
- 												</div>
- 												<div class="single-bottom">
- 													<input type="checkbox"  id="brand" value="">
- 													<label for="brand"><span></span>Remember Me.</label>
- 												</div>
- 												<div class="sign-in">
- 													<input type="submit" value="SIGNIN" >
- 												</div>
- 											</form>
- 										</div>
- 										<div class="clearfix"></div>
- 									</div>
- 									<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
- 								</div>
- 							</div>
- 						</div>
- 					</div>
- 				</div>
- 	<!-- //login -->
- 	<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
- 	<!-- js -->
- 	<script type="text/javascript" src="resources/js/jquery-2.1.4.min.js"></script>
- 	<!-- //js -->
- 		<!-- cart-js -->
- 		<script src="resources/js/minicart.min.js"></script>
- 	<script>
- 		// Mini Cart
- 		paypal.minicart.render({
- 			action: '#'
- 		});
+<!--/grids-->
+	<!-- /we-offer -->
+	
+	<!-- //we-offer -->
+<!--/grids-->
 
- 		if (~window.location.search.homeOf('reset=true')) {
- 			paypal.minicart.reset();
- 		}
- 	</script>
+<!--grids-->
+<!-- footer -->
+<div class="footer">
+	<div class="footer_agile_inner_info_w3l">
+		<div class="col-md-3 footer-left">
+			<h2><a href="../"><span>G</span>oreNani </a></h2>
+			<p>Lorem ipsum quia dolor
+			sit amet, consectetur, adipisci velit, sed quia non
+			numquam eius modi tempora.</p>
+			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+															<li><a href="#" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="twitter">
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Our <span>Information</span> </h4>
+					<ul>
+						<li><a href="../">Home</a></li>
+						
+						<li><a href="project">프로젝트</a></li>
+						<li><a href="open">오픈예정</a></li>
+						<li><a href="culture">문화콘텐츠</a></li>
+						<li><a href="end">종료된 프로젝트</a></li>
+					</ul>
+				</div>
 
- 		<!-- //cart-js -->
+				<div class="col-md-5 sign-gd-two">
+					<h4>Gorenani <span>Information</span></h4>
+					<div class="w3-address">
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Phone Number</h6>
+								<p>+82 234 567 8901</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Email Address</h6>
+								<p>Email :<a href="mailto:example@email.com"> Easy@naver.com</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>Location</h6>
+								<p>South of Korea
 
- 	<!-- stats -->
- 		<script src="resources/js/jquery.waypoints.min.js"></script>
- 		<script src="resources/js/jquery.countup.js"></script>
- 		<script>
- 			$('.counter').countUp();
- 		</script>
- 	<!-- //stats -->
- 	<!-- start-smoth-scrolling -->
- 	<script type="text/javascript" src="resources/js/move-top.js"></script>
- 	<script type="text/javascript" src="resources/js/jquery.easing.min.js"></script>
- 	<script type="text/javascript">
- 		jQuery(document).ready(function($) {
- 			$(".scroll").click(function(event){
- 				event.preventDefault();
- 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
- 			});
- 		});
- 	</script>
- 	<!-- here stars scrolling icon -->
- 		<script type="text/javascript">
- 			$(document).ready(function() {
- 				/*
- 					var defaults = {
- 					containerID: 'toTop', // fading element id
- 					containerHoverID: 'toTopHover', // fading element hover id
- 					scrollSpeed: 1200,
- 					easingType: 'linear'
- 					};
- 				*/
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 sign-gd flickr-post">
+					<h4>D<span>eveloper</span></h4>
 
- 				$().UItoTop({ easingType: 'easeOutQuart' });
+					<ul>
+						<li>김현진</li> <br>
+						<li>이미영</li> <br>
+						<li>이지원</li> <br>
+						<li>이준혁</li> <br>
+						<li>이승철</li>
+					</ul>
 
- 				});
- 		</script>
- 	<!-- //here ends scrolling icon -->
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
 
- 	<!-- for bootstrap working -->
- 	<script type="text/javascript" src="resources/js/bootstrap.js"></script>
-	<script type="text/javascript" src="resources/js/bootstrap2.js"></script>
- 	</body>
- 	</html>
+		<p class="copy-right">&copy 2019 GoreNani. All rights reserved | Design by <a href="http://w3layouts.com/">GoreNani</a></p>
+	</div>
+</div>
+<!-- //footer -->
+
+<!-- login -->
+			<div class="modal fade" id="myModal4" tabhome="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body modal-spa">
+							<div class="login-grids">
+								<div class="login">
+									<div class="login-bottom">
+										<h3>Sign up for free</h3>
+										<form>
+											<div class="sign-up">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+											</div>
+											<div class="sign-up">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+
+											</div>
+											<div class="sign-up">
+												<h4>Re-type Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+
+											</div>
+											<div class="sign-up">
+												<input type="submit" value="REGISTER NOW" >
+											</div>
+
+										</form>
+									</div>
+									<div class="login-right">
+										<h3>Sign in with your account</h3>
+										<form>
+											<div class="sign-in">
+												<h4>Email :</h4>
+												<input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+											</div>
+											<div class="sign-in">
+												<h4>Password :</h4>
+												<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												<a href="#">Forgot password?</a>
+											</div>
+											<div class="single-bottom">
+												<input type="checkbox"  id="brand" value="">
+												<label for="brand"><span></span>Remember Me.</label>
+											</div>
+											<div class="sign-in">
+												<input type="submit" value="SIGNIN" >
+											</div>
+										</form>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- //login -->
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="/resources/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+	<!-- cart-js -->
+	<script src="/resources/js/minicart.min.js"></script>
+<script>
+	// Mini Cart
+	paypal.minicart.render({
+		action: '#'
+	});
+
+	if (~window.location.search.homeOf('reset=true')) {
+		paypal.minicart.reset();
+	}
+</script>
+
+	<!-- //cart-js -->
+
+<!-- stats -->
+	<script src="/resources/js/jquery.waypoints.min.js"></script>
+	<script src="/resources/js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+<!-- //stats -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/resources/js/move-top.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+	<!-- 페이징이나 여러 기능과 관련된 스크립트 -->
+<script type="text/javascript">   
+   var actionForm = $("#actionForm");
+
+    // 페이지 번호 클릭 이벤트
+    $(".paginate_button a").on("click", function(e) {
+       e.preventDefault();
+       // console.log('click');
+       actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+       actionForm.submit();
+    });
+    
+ 	// 검색 버튼 클릭 이벤트 작업포인트
+	var searchForm = $("#searchForm");
+	$("#searchForm button").on("click",	function(e) {
+		if (!searchForm.find("option:selected").val()) {
+			alert("검색종류를 선택하세요");
+			return false;
+		}
+
+		if (!searchForm.find("input[name='keyword']").val()) {
+			alert("키워드를 입력하세요");
+			return false;
+		}
+		
+		searchForm.find("input[name='pageNum']").val("1");
+		e.preventDefault();
+		searchForm.submit();
+	});
+
+
+
+
+    
+</script>
+<!-- 페이징이나 여러 기능과 관련된 스크립트 여기까지 -->
+
+<!-- for bootstrap working -->
+<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap2.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.ync.project.mapper;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.ync.project.domain.Criteria;
 import com.ync.project.domain.InquryVO;
 import com.ync.project.front.mapper.InquryMapper;
 
@@ -31,15 +33,14 @@ public class InquryMapperTests {
 
 	Date time = new Date();
 
-	@Test
-	public void testGetList() {
-
-		mapper.getList().forEach((inqury) -> {
-			log.info("================");
-			log.info(inqury);
-		});
-
-	}
+//	@Test
+//	public void testGetList() {
+//
+//		mapper.getList().forEach((inqury) -> {
+//			log.info("================");
+//			log.info(inqury);
+//		});
+//	}
 
 //	@Test
 //	public void testInsert() {
@@ -77,6 +78,18 @@ public class InquryMapperTests {
 //		int count = mapper.update(inqury); 
 //		log.info("UPDATE COUNT: " + count);
 //
+//	}
+	
+//	@Test
+//	public void testPaging() {
+//		Criteria cri = new Criteria();
+//		
+//		cri.setPageNum(3);
+//		cri.setAmount(10);
+//		
+//		List<InquryVO> list = mapper.getListWithPaging(cri);
+//		
+//		list.forEach(inqury -> log.info(inqury.getInqury_num()));
 //	}
 
 }

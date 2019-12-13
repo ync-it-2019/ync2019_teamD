@@ -10,25 +10,28 @@ import com.ync.project.domain.RippleVO;
 /**
  * 
   * @FileName	: RippleMapper.java
-  * @Date		: 2019. 10. 21. 
-  * @Author		: 이승철
+  * @Date		: 2019. 10. 30. 
+  * @Author		: 이준혁
   * @프로그램 설명 : 댓글Mapper 작성
  */
 
 public interface RippleMapper {
-	public int insert(RippleVO vo);
+	public int insert(RippleVO vo); //등록
 	
-	public RippleVO read(Long ripple_num);
+	public RippleVO read(String userid);
 	
-	public int delete(Long ripple_num);
+	public RippleVO read2(Long project_num);
+	
+	public int remove(Long ripple_num);
 	
 	public int update(RippleVO content);
+	
+	public List<RippleVO> getList(Long project_num);
 	
 	public List<RippleVO> getListWithPaging(
 			@Param("cri") Criteria cri,
 			@Param("project_num") Long project_num);
 
-	public List<RippleVO> getList();
-
+	public int getCountByBno(Long project_num);
 	
 }

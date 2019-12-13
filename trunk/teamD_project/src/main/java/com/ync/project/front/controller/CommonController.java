@@ -1,5 +1,10 @@
 package com.ync.project.front.controller;
 
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +21,11 @@ public class CommonController {
 	public void accessDenied(Authentication auth, Model model) {
 
 		log.info("access Denied : " + auth);
-
+		
 		model.addAttribute("msg", "Access Denied");
 	}
 
-	@GetMapping("/customLogin")
+	@GetMapping("/login")
 	public void loginInput(String error, String logout, Model model) {
 
 		log.info("error: " + error);
@@ -35,16 +40,16 @@ public class CommonController {
 		}
 	}
 
-	@GetMapping("/customLogout")
+	@GetMapping("/logout")
 	public void logoutGET() {
-
-		log.info("custom logout");
+		
+		log.info("logout");
 	}
-
-	@PostMapping("/customLogout")
+	
+	@PostMapping("/logout")
 	public void logoutPost() {
-
-		log.info("post custom logout");
+		
+		log.info("post logout");
 	}
 
 }
