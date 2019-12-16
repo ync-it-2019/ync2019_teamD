@@ -54,6 +54,8 @@
 		<result property="nickname" column="nickname"/>
 		<result property="profile_image" column="profile_image"/>
 		<result property="account" column="account"/>
+		<result property="job" column="job"/>
+		<result property="bank" column="bank"/>
 	</resultMap>
 	
 	<select id="myPage" resultMap="mypageMap">
