@@ -251,6 +251,7 @@ public class ProjectController {
 	    log.info("testtest" + principal);
 	    if(principal != null) {
 			String id = principal.getName();
+			log.info("get_test: " + service4.get(id));
 			model.addAttribute("login_user",service4.get(id));
 	    }
 	    
@@ -262,8 +263,9 @@ public class ProjectController {
 	    model.addAttribute("ripple", service3.getList(pno));
 	   
 	   if(principal != null) {
-		   log.info("service4_log : " + service4.myPage(principal.getName()));
-		   model.addAttribute("login_info", service4.myPage(principal.getName()));
+		   String id = principal.getName();
+		   log.info("service4_log : " + service4.myPage(id));
+		   model.addAttribute("login_info", service4.myPage(id));
 		   model.addAttribute("princ", principal.getName());
 	   }
 	}

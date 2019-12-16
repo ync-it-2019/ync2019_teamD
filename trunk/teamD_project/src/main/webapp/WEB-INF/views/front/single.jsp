@@ -366,14 +366,14 @@ String contentUserId="";
 														<a href="#" onclick="myPageLogin()" class='btn btn-primary btn-xs pull-right' style="width:400px; height:35px;"><h3>투자하기</h3></a>
 												</sec:authorize>
 												
-												<sec:authorize access="isAuthenticated()">
-													<c:if test="${not empty login_info.bank}">
-														<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="test2">투자하기</button>	
-													</c:if>
-													<c:if test="${empty login_info.bank}">
-														<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="iregister" onclick="location.href='../investorjoin'">투자자 등록하기</button>	
-													</c:if>
-												</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+						<c:if test="${not empty login_info.bank}">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="test2">투자하기</button>	
+						</c:if>
+						<c:if test="${empty login_info.bank}">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="iregister" onclick="location.href='../investorjoin'">투자자 등록하기</button>	
+						</c:if>
+					</sec:authorize>
 					
 					
 					
