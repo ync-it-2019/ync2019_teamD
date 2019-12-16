@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="mypageMyProject">
 						<h3 class="mypageLinkProject">내 프로젝트</h3>
 					</a>
-					<a href='profileEdit' class='mypageLinkEditBtn'>프로필 편집ss</a>
+					<a href='profileEdit' class='mypageLinkEditBtn'>프로필 편집</a>
 				</div>
 				<div class="col-md-4 ab_pic_w3ls_text_info">
 					<div class="card" style="width:400px">

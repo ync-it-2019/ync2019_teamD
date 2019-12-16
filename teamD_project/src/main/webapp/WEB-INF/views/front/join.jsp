@@ -148,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <div class="styled-input agile-styled-input-top">
             <span class="input-group-btn">
               <input type="text" name="userid" id="userid" required="">
-              <label>아메일 계정</label>
+              <label>이메일 계정</label>
               <button class="btn btn-default" id="cebnt" onclick="cebnt_click();" type="button">중복확인</button>
             </span>
           </div>
