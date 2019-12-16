@@ -371,7 +371,7 @@ String contentUserId="";
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="test2">투자하기</button>	
 						</c:if>
 						<c:if test="${empty login_info.bank}">
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invest_button" style="width: 400px;" id="iregister" onclick="location.href='../investorjoin'">투자자 등록하기</button>	
+							<button type="button" class="btn btn-primary"  style="width: 400px;" id="iregister" onclick="location.href='../investorjoin'">투자자 등록하기</button>	
 						</c:if>
 					</sec:authorize>
 					
